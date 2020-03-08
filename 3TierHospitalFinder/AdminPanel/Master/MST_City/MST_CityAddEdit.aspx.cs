@@ -12,6 +12,11 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
     {
         if (!Page.IsPostBack)
         {
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Login/Login.aspx");
+            }
+
             #region 11.3 DropDown List Fill Section
 
             FillDropDownList();
@@ -110,6 +115,8 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
 
             entMST_City.ModificationDate = DateTime.Now;
 
+            entMST_City.UserID = Convert.ToInt32(Session["UserID"]);
+
             MST_CityBAL balMST_City = new MST_CityBAL();
 
             if (balMST_City.Insert(entMST_City))
@@ -141,6 +148,8 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
             entMST_City.CityID = Convert.ToInt32(Request.QueryString["CityID"]);
 
             entMST_City.ModificationDate = DateTime.Now;
+
+            entMST_City.UserID = Convert.ToInt32(Session["UserID"]);
 
             MST_CityBAL balMST_City = new MST_CityBAL();
 

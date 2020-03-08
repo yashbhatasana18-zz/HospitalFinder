@@ -11,6 +11,11 @@ public partial class AdminPanel_Master_MST_Category_MST_CategoryAddEdit : System
     {
         if (!Page.IsPostBack)
         {
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Login/Login.aspx");
+            }
+
             #region 11.4 Set Control Default Value
 
             if (Request.QueryString["CategoryID"] != null)
@@ -64,6 +69,7 @@ public partial class AdminPanel_Master_MST_Category_MST_CategoryAddEdit : System
 
             entMST_Category.CreationDate = DateTime.Now;
             entMST_Category.ModificationDate = DateTime.Now;
+            entMST_Category.UserID = Convert.ToInt32(Session["UserID"]);
 
             MST_CategoryBAL balMST_Category = new MST_CategoryBAL();
             if (balMST_Category.Insert(entMST_Category))
@@ -81,6 +87,7 @@ public partial class AdminPanel_Master_MST_Category_MST_CategoryAddEdit : System
             }
             entMST_Category.CategoryID = Convert.ToInt32(Request.QueryString["CategoryID"]);
             entMST_Category.ModificationDate = DateTime.Now;
+            entMST_Category.UserID = Convert.ToInt32(Session["UserID"]);
             MST_CategoryBAL balMST_Category = new MST_CategoryBAL();
             if (balMST_Category.Update(entMST_Category))
             {

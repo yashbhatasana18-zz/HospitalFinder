@@ -62,8 +62,8 @@ namespace HospitalFinder.ENT
             }
         }
 
-        protected SqlDateTime _UserID;
-        public SqlDateTime UserID
+        protected SqlInt32 _UserID;
+        public SqlInt32 UserID
         {
             get
             {

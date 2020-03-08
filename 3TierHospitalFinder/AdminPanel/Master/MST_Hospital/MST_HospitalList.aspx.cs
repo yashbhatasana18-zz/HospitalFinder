@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 
 public partial class AdminPanel_Master_MST_Hospital_MST_HospitalList : System.Web.UI.Page
 {
-    SqlInt32 UserID = SqlInt32.Null;
+    
 
     #region Page Load Event
     protected void Page_Load(object sender, EventArgs e)
@@ -17,19 +17,18 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalList : System.We
         }
         if (!Page.IsPostBack)
         {
-            if (Session["UserID"] != null)
-                UserID = Convert.ToInt32(Session["UserID"]);
+            
 
-            RepeaterFill(UserID);
+            RepeaterFill();
         }
     }
     #endregion Page Load Event
 
     #region RepeaterFill Function
-    private void RepeaterFill(SqlInt32 UserID)
+    private void RepeaterFill()
     {
         MST_HospitalBAL balMST_Hospital = new MST_HospitalBAL();
-        rptHospitalList.DataSource = balMST_Hospital.SelectAll(UserID); ;
+        rptHospitalList.DataSource = balMST_Hospital.SelectAll(); ;
         rptHospitalList.DataBind();
         int Count = rptHospitalList.Items.Count;
         lblCount.Text = Count.ToString();
@@ -52,7 +51,7 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalList : System.We
             }
             finally
             {
-                RepeaterFill(UserID);
+                RepeaterFill();
             }
         }
     }

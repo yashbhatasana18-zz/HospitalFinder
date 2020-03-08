@@ -50,6 +50,7 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@EmergencyNumber", SqlDbType.VarChar, entMST_Hospital.EmergencyNumber);
                 sqlDB.AddInParameter(dbCMD, "@CreationDate", SqlDbType.DateTime, entMST_Hospital.CreationDate);
                 sqlDB.AddInParameter(dbCMD, "@ModificationDate", SqlDbType.DateTime, entMST_Hospital.ModificationDate);
+                sqlDB.AddInParameter(dbCMD, "@UserID", SqlDbType.Int, entMST_Hospital.UserID);
 
                 DataBaseHelper DBH = new DataBaseHelper();
                 DBH.ExecuteNonQuery(sqlDB, dbCMD);
@@ -229,14 +230,14 @@ namespace HospitalFinder.DAL
                 return null;
             }
         }
-        public DataTable SelectAll(SqlInt32 UserID)
+        public DataTable SelectAll()
         {
             try
             {
                 SqlDatabase sqlDB = new SqlDatabase(myConnectionString);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("PR_MST_Hospital_SelectAll");
 
-                sqlDB.AddInParameter(dbCMD, "@UserID", SqlDbType.Int, UserID);
+               
 
                 DataTable dtMST_Hospital = new DataTable("PR_MST_Hospital_SelectAll");
 

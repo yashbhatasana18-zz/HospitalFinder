@@ -39,6 +39,7 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@CategoryName", SqlDbType.VarChar, entMST_Category.CategoryName);
                 sqlDB.AddInParameter(dbCMD, "@CreationDate", SqlDbType.DateTime, entMST_Category.CreationDate);
                 sqlDB.AddInParameter(dbCMD, "@ModificationDate", SqlDbType.DateTime, entMST_Category.ModificationDate);
+                sqlDB.AddInParameter(dbCMD, "@UserID", SqlDbType.Int, entMST_Category.UserID);
 
                 DataBaseHelper DBH = new DataBaseHelper();
                 DBH.ExecuteNonQuery(sqlDB, dbCMD);

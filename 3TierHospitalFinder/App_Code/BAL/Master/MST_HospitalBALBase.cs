@@ -91,10 +91,10 @@ namespace HospitalFinder.BAL
             MST_HospitalDAL dalMST_Hospital = new MST_HospitalDAL();
             return dalMST_Hospital.SelectPK(HospitalID);
         }
-        public DataTable SelectAll(SqlInt32 UserID)
+        public DataTable SelectAll()
         {
             MST_HospitalDAL dalMST_Hospital = new MST_HospitalDAL();
-            return dalMST_Hospital.SelectAll(UserID);
+            return dalMST_Hospital.SelectAll();
         }
 
         #endregion SelectOperation

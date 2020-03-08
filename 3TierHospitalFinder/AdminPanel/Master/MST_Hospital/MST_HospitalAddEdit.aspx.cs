@@ -16,6 +16,12 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
     {
         if (!Page.IsPostBack)
         {
+
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Login/Login.aspx");
+            }
+
             #region 11.3 DropDown List Fill Section
 
             FillDropDownList();
@@ -172,6 +178,8 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
 
             entMST_Hospital.ModificationDate = DateTime.Now;
 
+            entMST_Hospital.UserID = Convert.ToInt32(Session["UserID"]);
+
             MST_HospitalBAL balMST_Hospital = new MST_HospitalBAL();
 
             if (balMST_Hospital.Insert(entMST_Hospital))
@@ -236,6 +244,8 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             entMST_Hospital.HospitalID = Convert.ToInt32(Request.QueryString["HospitalID"]);
 
             entMST_Hospital.ModificationDate = DateTime.Now;
+
+            entMST_Hospital.UserID = Convert.ToInt32(Session["UserID"]);
 
             MST_HospitalBAL balMST_Hospital = new MST_HospitalBAL();
 

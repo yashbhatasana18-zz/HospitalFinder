@@ -18,6 +18,11 @@ public partial class AdminPanel_Master_MST_State_MST_StateAddEdit : System.Web.U
     {
         if (!Page.IsPostBack)
         {
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("~/Login/Login.aspx");
+            }
+
             #region 11.4 Set Control Default Value
 
             if (Request.QueryString["StateID"] != null)
@@ -72,6 +77,7 @@ public partial class AdminPanel_Master_MST_State_MST_StateAddEdit : System.Web.U
 
             entMST_State.CreationDate = DateTime.Now;
             entMST_State.ModificationDate = DateTime.Now;
+            entMST_State.UserID = Convert.ToInt32(Session["UserID"]);
 
             MST_StateBAL balMST_State = new MST_StateBAL();
             if (balMST_State.Insert(entMST_State))
@@ -89,6 +95,7 @@ public partial class AdminPanel_Master_MST_State_MST_StateAddEdit : System.Web.U
             }
             entMST_State.StateID = Convert.ToInt32(Request.QueryString["StateID"]);
             entMST_State.ModificationDate = DateTime.Now;
+            entMST_State.UserID = Convert.ToInt32(Session["UserID"]);
             MST_StateBAL balMST_State = new MST_StateBAL();
             if (balMST_State.Update(entMST_State))
             {
