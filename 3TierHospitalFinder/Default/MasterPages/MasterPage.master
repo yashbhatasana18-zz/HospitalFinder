@@ -210,37 +210,37 @@
                             <ul class="sub-menu">
 
                                 <li>
-                                    <asp:HyperLink ID="hlAcademicYear" NavigateUrl="~/AdminPanel/Master/MST_Hospital/MST_HospitalList.aspx" runat="server">
+                                    <asp:HyperLink ID="hlHospital" NavigateUrl="~/AdminPanel/Master/MST_Hospital/MST_HospitalList.aspx" runat="server">
                                         <i class="icon-calendar"></i>
                                         <span class="title">Hospital</span>
                                     </asp:HyperLink>
                                 </li>
                                 <li>
-                                    <asp:HyperLink ID="HyperLink1" NavigateUrl="~/AdminPanel/Master/MST_Category/MST_CategoryList.aspx" runat="server">
+                                    <asp:HyperLink ID="hlCategory" NavigateUrl="~/AdminPanel/Master/MST_Category/MST_CategoryList.aspx" runat="server">
                                         <i class="fa fa-building-o"></i>
-                                        <span class="title">CategoryName</span>
+                                        <span class="title">Category</span>
                                     </asp:HyperLink>
                                 </li>
                                 <li>
-                                    <asp:HyperLink ID="hlDepartment" NavigateUrl="~/AdminPanel/Master/MST_CategoryType/MST_CategoryTypeList.aspx" runat="server">
+                                    <asp:HyperLink ID="hlCategoryType" NavigateUrl="~/AdminPanel/Master/MST_CategoryType/MST_CategoryTypeList.aspx" runat="server">
                                         <i class="fa fa-university"></i>
                                         <span class="title">CategoryType</span>
                                     </asp:HyperLink>
                                 </li>
                                 <li>
-                                    <asp:HyperLink ID="hlFaculty" NavigateUrl="~/AdminPanel/Master/MST_State/MST_StateList.aspx" runat="server">
+                                    <asp:HyperLink ID="hlState" NavigateUrl="~/AdminPanel/Master/MST_State/MST_StateList.aspx" runat="server">
                                         <i class="icon-users"></i>
                                         <span class="title">State</span>
                                     </asp:HyperLink>
                                 </li>
                                 <li>
-                                    <asp:HyperLink ID="hlInstitute" NavigateUrl="~/AdminPanel/Master/MST_City/MST_CityList.aspx" runat="server">
+                                    <asp:HyperLink ID="hlCity" NavigateUrl="~/AdminPanel/Master/MST_City/MST_CityList.aspx" runat="server">
                                         <i class="fa fa-university"></i>
                                         <span class="title">City</span>
                                     </asp:HyperLink>
                                 </li>
                                 <%--<li>
-                                    <asp:HyperLink ID="hlStudent" NavigateUrl="~/AdminPanel/Master/MST_Student/MST_StudentList.aspx" runat="server">
+                                    <asp:HyperLink ID="hlAbout" NavigateUrl="~/AdminPanel/Master/MST_Student/MST_StudentList.aspx" runat="server">
                                         <i class="icon-user"></i>
                                         <span class="title">About</span>
                                     </asp:HyperLink>

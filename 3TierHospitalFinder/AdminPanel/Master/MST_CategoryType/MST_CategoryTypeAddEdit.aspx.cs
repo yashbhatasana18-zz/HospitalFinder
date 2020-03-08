@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using HospitalFinder.BAL;
 using HospitalFinder.ENT;
-using HospitalFinder;
-using System.Web.UI.WebControls;
 
 public partial class AdminPanel_Master_MST_CategoryType_MST_CategoryTypeAddEdit : System.Web.UI.Page
 {
@@ -26,15 +21,14 @@ public partial class AdminPanel_Master_MST_CategoryType_MST_CategoryTypeAddEdit 
             if (Request.QueryString["CategoryTypeID"] != null)
             {
                 #region Load Data in Edit Mode
-
-                lblPageHeader.Text = "CategoryType Edit";
+                lblPageHeader.Text = "Category Type Edit";
                 btnAdd.Text = "Update";
                 FillControls(Convert.ToInt32(Request.QueryString["CategoryTypeID"]));
                 #endregion Load Data in Edit Mode
             }
             else
             {
-                lblPageHeader.Text = "CategoryType Add";
+                lblPageHeader.Text = "Category Type Add";
             }
 
             #endregion 11.4 Set Control Default Value
@@ -79,6 +73,7 @@ public partial class AdminPanel_Master_MST_CategoryType_MST_CategoryTypeAddEdit 
             MST_CategoryTypeBAL balMST_CategoryType = new MST_CategoryTypeBAL();
             if (balMST_CategoryType.Insert(entMST_CategoryType))
             {
+                pnlAlert.Visible = true;
                 lblMessage.Text = "Data Inserted Successfully.";
                 ClearControls();
             }

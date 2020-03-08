@@ -1,32 +1,77 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default/MasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="MST_CategoryAddEdit.aspx.cs" Inherits="AdminPanel_Master_MST_Category_MST_CategoryAddEdit" %>
+﻿<%@ Page Title="" EnableTheming="true" Theme="Admin" Language="C#" MasterPageFile="~/Default/MasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="MST_CategoryAddEdit.aspx.cs" Inherits="AdminPanel_Master_MST_Category_MST_CategoryAddEdit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>
-                    <asp:Label ID="lblPageHeader" runat="server"></asp:Label>
-                </h1>
-                <asp:Label ID="lblMessage" runat="server" CssClass="badge badge-success"></asp:Label>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphPageHeader" runat="Server">
+    Hospital Category
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphBreadCrumb" runat="Server">
+    <li>
+        <i class="fa fa-home"></i>
+        <asp:HyperLink runat="server" NavigateUrl="~/AdminPanel/Default.aspx">Home</asp:HyperLink>
+        <i class="fa fa-angle-right"></i>
+    </li>
+    <li>
+        <a href="MST_CategoryList.aspx">HospitalCategory</a>
+        <i class="fa fa-angle-right"></i>
+    </li>
+    <li>HospitalCategoryAddEdit
+    </li>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphContent" runat="Server">
+    <asp:Panel ID="pnlAlert" runat="server" Visible="false">
+        <div class="alert alert-success alert-dismissable ">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+            <asp:Label ID="lblMessage" runat="server" EnableViewState="false"></asp:Label>
+        </div>
+    </asp:Panel>
+
+    <div style="padding-right: 25px; float: right;">
+        <asp:HyperLink ID="hlBack" runat="server" NavigateUrl="javascript:history.go(-1)">
+	        [ Back to page ]
+        </asp:HyperLink>
+    </div>
+
+    <div class="portlet light">
+        <div class="portlet-title">
+            <div class="caption">
+                <asp:Label SkinID="lblFormHeaderIcon" ID="lblFormHeaderIcon" runat="server"></asp:Label>
+                <span class="caption-subject font-green-sharp bold uppercase">
+                    <asp:Label runat="server" ID="lblPageHeader"></asp:Label>
+                </span>
             </div>
-            <div class="col-md-12 m-3">
-                <div class="form-group row">
-                    <label for="name" class="col-sm-3 col-form-label">Category Name<span style="color:red;font-size:20px;">*</span> :</label>
-                    <div class="col-sm-9">
-                        <asp:TextBox runat="server" ID="txtCategoryName" CssClass="form-control"></asp:TextBox>
-                        <small id="passwordHelpBlock" class="form-text text-muted ">
-                            <asp:RequiredFieldValidator ID="rfvCategoryName" runat="server" Display="Dynamic" ErrorMessage="Enter Category Name" ControlToValidate="txtCategoryName" ValidationGroup="CategoryAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-                        </small>
+        </div>
+
+        <div class="portlet-body form">
+            <div class="form-horizontal" role="form">
+                <div class="form-body">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span>Category Name<span class="required">*</span></span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtCategoryName" type="text" class="form-control" placeholder="Enter Category Name" />
+                            <asp:RequiredFieldValidator ID="rfvCategoryName" runat="server"
+                                ControlToValidate="txtCategoryName" ErrorMessage="Enter Category Name" Display="Dynamic"
+                                SetFocusOnError="True" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
                     </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <asp:Button ID="btnAdd" runat="server" SkinID="btnSave" ValidationGroup="master" OnClick="btnAdd_Click" />
+                                <asp:HyperLink ID="hlCancel" runat="server" SkinID="hlCancel" NavigateUrl="~/AdminPanel/Master/MST_Category/MST_CategoryList.aspx"></asp:HyperLink>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="col-md-12 offset-10">
-                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-outline-success" ValidationGroup="CategoryAddEdit" OnClick="btnAdd_Click" />
-                <asp:HyperLink ID="hlCancel" runat="server" NavigateUrl="~/AdminPanel/Master/MST_Category/MST_CategoryList.aspx" Text="Cancel" CssClass="btn btn-outline-danger"></asp:HyperLink>
             </div>
         </div>
     </div>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cphScripts" runat="Server">
 </asp:Content>
 

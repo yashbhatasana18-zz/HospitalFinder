@@ -48,9 +48,8 @@
                 <div class="form-body">
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label">
-                            <span class="required">*</span>
-                            <span>City Name</span>
+                        <label class="col-md-3 control-label">                            
+                            <span>City Name<span class="required">*</span></span>                            
                         </label>
                         <div class="col-md-3">
                             <asp:TextBox runat="server" ID="txtCityName" type="text" class="form-control" placeholder="Enter City Name" />
@@ -70,9 +69,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-md-3 control-label">
-                            <span class="required">*</span>
-                            <span>State</span>
+                        <label class="col-md-3 control-label">                            
+                            <span>State<span class="required">*</span></span>                         
                         </label>
                         <div class="col-md-3">
                             <asp:DropDownList runat="server" ID="ddlState" CssClass="form-control select2me"></asp:DropDownList>

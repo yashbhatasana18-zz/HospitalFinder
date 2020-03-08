@@ -74,6 +74,7 @@ public partial class AdminPanel_Master_MST_Category_MST_CategoryAddEdit : System
             MST_CategoryBAL balMST_Category = new MST_CategoryBAL();
             if (balMST_Category.Insert(entMST_Category))
             {
+                pnlAlert.Visible = true;
                 lblMessage.Text = "Data Inserted Successfully.";
                 ClearControls();
             }
