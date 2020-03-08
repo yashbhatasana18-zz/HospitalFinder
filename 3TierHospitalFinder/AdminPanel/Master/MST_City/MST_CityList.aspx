@@ -24,7 +24,7 @@
             <asp:Panel ID="pnlAlert" runat="server" Visible="false">
                 <div class="alert alert-danger alert-dismissable ">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                     <asp:Label ID="lblMsg" runat="server" EnableViewState="false"></asp:Label>
+                    <asp:Label ID="lblMsg" runat="server" EnableViewState="false"></asp:Label>
                 </div>
             </asp:Panel>
 
@@ -37,10 +37,9 @@
             </div>
             <div class="actions">
                 <asp:HyperLink ID="hlAddCity" runat="server" NavigateUrl="~/AdminPanel/Master/MST_City/MST_CityAddEdit.aspx"
-                    CssClass="btn btn-success" Text="<i class='fa fa-plus-circle'></i>&nbsp;Add City"> 
+                    CssClass="btn btn-success" Text="<i class='fa fa-plus-circle'></i>&nbsp;Add City">
                 </asp:HyperLink>
             </div>
-
         </div>
 
         <br />
@@ -64,9 +63,9 @@
                                     <th class="text-center">
                                         <asp:Label ID="lbhStateName" runat="server" Text="State Name"></asp:Label>
                                     </th>
-                                    <th class="text-center">
+                                    <%--  <th class="text-center">
                                         <asp:Label ID="lbhPinCode" runat="server" Text="PinCode"></asp:Label>
-                                    </th>
+                                    </th>--%>
                                     <th class="text-center">
                                         <asp:Label ID="lbhSTDCode" runat="server" Text="STDCode"></asp:Label>
                                     </th>
@@ -90,7 +89,7 @@
                                         <tr>
                                             <td class="text-center"><%#Eval("CityName") %></td>
                                             <td class="text-center"><%#Eval("StateName") %></td>
-                                            <td class="text-center"><%#Eval("PinCode") %></td>
+                                            <%-- <td class="text-center"><%#Eval("PinCode") %></td>--%>
                                             <td class="text-center"><%#Eval("STDCode") %></td>
                                             <td class="text-center"><%#Eval("UserName") %></td>
                                             <td class="text-center"><%#Eval("CreationDate","{0:dd-MM-yyyy}") %></td>
@@ -136,4 +135,3 @@
         }
     </script>
 </asp:Content>
-

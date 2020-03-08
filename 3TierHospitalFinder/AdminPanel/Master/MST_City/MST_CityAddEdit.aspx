@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPageHeader" runat="Server">
-    City 
+    City
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBreadCrumb" runat="Server">
     <li>
@@ -26,7 +26,7 @@
             <asp:Label ID="lblMessage" runat="server" EnableViewState="false"></asp:Label>
         </div>
     </asp:Panel>
-    
+
     <div style="padding-right: 25px; float: right;">
         <asp:HyperLink ID="hlBack" runat="server" NavigateUrl="javascript:history.go(-1)">
 	        [ Back to page ]
@@ -56,19 +56,6 @@
                             <asp:TextBox runat="server" ID="txtCityName" type="text" class="form-control" placeholder="Enter City Name" />
                             <asp:RequiredFieldValidator ID="rfvCityName" runat="server"
                                 ControlToValidate="txtCityName" ErrorMessage="Enter City Name" Display="Dynamic"
-                                SetFocusOnError="True" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-3 control-label">
-                            <span class="required">*</span>
-                            <span>Pin Code</span>
-                        </label>
-                        <div class="col-md-3">
-                            <asp:TextBox runat="server" ID="txtPinCode" type="text" class="form-control" placeholder="Enter PinCode" MaxLength="6" />
-                            <asp:RequiredFieldValidator ID="rfvPinCode" runat="server"
-                                ControlToValidate="txtPinCode" ErrorMessage="Enter PinCode" Display="Dynamic"
                                 SetFocusOnError="True" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>

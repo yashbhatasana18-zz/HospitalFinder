@@ -13,6 +13,7 @@ namespace HospitalFinder.DAL
         #region Properties
 
         private string _Message;
+
         public string Message
         {
             get
@@ -38,7 +39,6 @@ namespace HospitalFinder.DAL
 
                 sqlDB.AddInParameter(dbCMD, "@StateID", SqlDbType.Int, entMST_City.StateID);
                 sqlDB.AddInParameter(dbCMD, "@CityName", SqlDbType.VarChar, entMST_City.CityName);
-                sqlDB.AddInParameter(dbCMD, "@PinCode", SqlDbType.VarChar, entMST_City.PinCode);
                 sqlDB.AddInParameter(dbCMD, "@STDCode", SqlDbType.VarChar, entMST_City.STDCode);
                 sqlDB.AddInParameter(dbCMD, "@CreationDate", SqlDbType.DateTime, entMST_City.CreationDate);
                 sqlDB.AddInParameter(dbCMD, "@ModificationDate", SqlDbType.DateTime, entMST_City.ModificationDate);
@@ -79,7 +79,6 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@CityID", SqlDbType.Int, entMST_City.CityID);
                 sqlDB.AddInParameter(dbCMD, "@StateID", SqlDbType.Int, entMST_City.StateID);
                 sqlDB.AddInParameter(dbCMD, "@CityName", SqlDbType.VarChar, entMST_City.CityName);
-                sqlDB.AddInParameter(dbCMD, "@PinCode", SqlDbType.VarChar, entMST_City.PinCode);
                 sqlDB.AddInParameter(dbCMD, "@STDCode", SqlDbType.VarChar, entMST_City.STDCode);
                 sqlDB.AddInParameter(dbCMD, "@ModificationDate", SqlDbType.DateTime, entMST_City.ModificationDate);
 
@@ -166,9 +165,6 @@ namespace HospitalFinder.DAL
                         if (!dr["CityName"].Equals(System.DBNull.Value))
                             entMST_City.CityName = Convert.ToString(dr["CityName"]);
 
-                        if (!dr["PinCode"].Equals(System.DBNull.Value))
-                            entMST_City.PinCode = Convert.ToString(dr["PinCode"]);
-
                         if (!dr["STDCode"].Equals(System.DBNull.Value))
                             entMST_City.STDCode = Convert.ToString(dr["STDCode"]);
                     }
@@ -190,6 +186,7 @@ namespace HospitalFinder.DAL
                 return null;
             }
         }
+
         public DataTable SelectAll()
         {
             try
@@ -221,6 +218,5 @@ namespace HospitalFinder.DAL
         }
 
         #endregion SelectOperation
-
     }
 }
