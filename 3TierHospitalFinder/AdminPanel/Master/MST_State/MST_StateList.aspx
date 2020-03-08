@@ -1,14 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default/MasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="MST_StateList.aspx.cs" Inherits="AdminPanel_Master_MST_State_MST_StateList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h1>
-                    <asp:Label ID="lblHeader" runat="server" Text="State List"></asp:Label>
+                    <asp:Label ID="lblHeader" runat="server" Text="State & Union territories List"></asp:Label>
                     (<asp:Label ID="lblCount" runat="server" Text="State Count"></asp:Label>)
                 </h1>
                 <asp:Label runat="server" ID="lblMsg"></asp:Label>
@@ -71,7 +70,7 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphScripts" runat="Server">
-     <script type="text/javascript">
+    <script type="text/javascript">
         const SearchFunction = () => {
             let myinput = document.getElementById('cphContent_txtSearch').value.toUpperCase();
             let mytable = document.getElementById('tbState');
