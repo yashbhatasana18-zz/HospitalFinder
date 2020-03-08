@@ -121,6 +121,7 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
 
             if (balMST_City.Insert(entMST_City))
             {
+                pnlAlert.Visible = true;
                 lblMessage.Text = "Data Inserted Successfully.";
                 ClearControls();
             }

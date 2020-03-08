@@ -1,60 +1,112 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default/MasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="MST_CityAddEdit.aspx.cs" Inherits="AdminPanel_Master_MST_City_MST_CityAddEdit" %>
+﻿<%@ Page Title="" EnableTheming="true" Theme="Admin" Language="C#" MasterPageFile="~/Default/MasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="MST_CityAddEdit.aspx.cs" Inherits="AdminPanel_Master_MST_City_MST_CityAddEdit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>
-                    <asp:Label ID="lblPageHeader" runat="server"></asp:Label>
-                </h1>
-                <asp:Label ID="lblMessage" runat="server" CssClass="badge badge-success"></asp:Label>
-            </div>
-            <div class="col-md-12 m-3">
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">City Name<span style="color:red;font-size:20px;">*</span> :</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtCityName" CssClass="form-control"></asp:TextBox>
-                        <small id="passwordHelpBlock" class="form-text text-muted ">
-                            <asp:RequiredFieldValidator ID="rfvCityName" runat="server" ErrorMessage="Enter City Name" ControlToValidate="txtCityName" Display="Dynamic" ValidationGroup="CityAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-                        </small>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">Pin Code<span style="color:red;font-size:20px;">*</span> :</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtPinCode" CssClass="form-control"></asp:TextBox>
-                        <small id="Small1" class="form-text text-muted ">
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Enter PinCode" ControlToValidate="txtPinCode" Display="Dynamic" ValidationGroup="CityAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-                        </small>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label">STD Code :</label>
-                    <div class="col-sm-10">
-                        <asp:TextBox runat="server" ID="txtSTDCode" CssClass="form-control"></asp:TextBox>
-<%--                        <small id="Small3" class="form-text text-muted ">
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Enter STDCode" ControlToValidate="txtSTDCode" Display="Dynamic" ValidationGroup="CityAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-                        </small>--%>
-                    </div>
-                </div>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphPageHeader" runat="Server">
+    City 
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphBreadCrumb" runat="Server">
+    <li>
+        <i class="fa fa-home"></i>
+        <asp:HyperLink runat="server" NavigateUrl="~/AdminPanel/Default.aspx">Home</asp:HyperLink>
+        <i class="fa fa-angle-right"></i>
+    </li>
+    <li>
+        <a href="MST_cityList.aspx">City</a>
+        <i class="fa fa-angle-right"></i>
+    </li>
+    <li>CityAddEdit
+    </li>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphContent" runat="Server">
 
-                <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Select State<span style="color:red;font-size:20px;">*</span> :</label>
-                    <div class="col-sm-10">
-                        <asp:DropDownList ID="ddlState" CssClass="form-control" runat="server"></asp:DropDownList>
-                        <small id="Small2" class="form-text text-muted">
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Select State Name" ControlToValidate="ddlState" Display="Dynamic" ValidationGroup="CityAddEdit" ForeColor="#FF3300" InitialValue="-99"></asp:RequiredFieldValidator>
-                        </small>
+    <asp:Panel ID="pnlAlert" runat="server" Visible="false">
+        <div class="alert alert-success alert-dismissable ">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+            <asp:Label ID="lblMessage" runat="server" EnableViewState="false"></asp:Label>
+        </div>
+    </asp:Panel>
+    
+    <div style="padding-right: 25px; float: right;">
+        <asp:HyperLink ID="hlBack" runat="server" NavigateUrl="javascript:history.go(-1)">
+	        [ Back to page ]
+        </asp:HyperLink>
+    </div>
+
+    <div class="portlet light">
+        <div class="portlet-title">
+            <div class="caption">
+                <asp:Label SkinID="lblFormHeaderIcon" ID="lblFormHeaderIcon" runat="server"></asp:Label>
+                <span class="caption-subject font-green-sharp bold uppercase">
+                    <asp:Label runat="server" ID="lblPageHeader"></asp:Label>
+                </span>
+            </div>
+        </div>
+
+        <div class="portlet-body form">
+            <div class="form-horizontal" role="form">
+                <div class="form-body">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>City Name</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtCityName" type="text" class="form-control" placeholder="Enter City Name" />
+                            <asp:RequiredFieldValidator ID="rfvCityName" runat="server"
+                                ControlToValidate="txtCityName" ErrorMessage="Enter City Name" Display="Dynamic"
+                                SetFocusOnError="True" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>Pin Code</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtPinCode" type="text" class="form-control" placeholder="Enter PinCode" MaxLength="6" />
+                            <asp:RequiredFieldValidator ID="rfvPinCode" runat="server"
+                                ControlToValidate="txtPinCode" ErrorMessage="Enter PinCode" Display="Dynamic"
+                                SetFocusOnError="True" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <asp:Label runat="server" ID="lblRemarks">STD Code</asp:Label>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox ID="txtSTDCode" runat="server" class="form-control" placeholder="Enter STD Code"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>State</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:DropDownList runat="server" ID="ddlState" CssClass="form-control select2me"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvState" runat="server"
+                                ControlToValidate="ddlState" Display="Dynamic" InitialValue="-99"
+                                ErrorMessage="Select State Name" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <asp:LinkButton ID="btnAdd" runat="server" SkinID="btnSave" ValidationGroup="master" OnClick="btnAdd_Click" />
+                                <asp:HyperLink ID="hlCancel" runat="server" SkinID="hlCancel" CausesValidation="false" NavigateUrl="~/AdminPanel/Master/MST_City/MST_CityList.aspx" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12 offset-10">
-                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-outline-success" ValidationGroup="CityAddEdit" OnClick="btnAdd_Click" />
-                <asp:HyperLink ID="hlCancel" runat="server" NavigateUrl="~/AdminPanel/Master/MST_City/MST_CityList.aspx" Text="Cancel" CssClass="btn btn-outline-danger"></asp:HyperLink>
             </div>
         </div>
     </div>
 </asp:Content>
-
+<asp:Content ID="Content5" ContentPlaceHolderID="cphScripts" runat="Server">
+</asp:Content>

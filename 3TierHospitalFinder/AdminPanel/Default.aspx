@@ -2,7 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="cphPageHeader" runat="Server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphBreadCrumb" runat="Server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphContent" runat="Server">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -13,4 +17,5 @@
         </div>
     </div>
 </asp:Content>
-
+<asp:Content ID="Content5" ContentPlaceHolderID="cphScripts" runat="Server">
+</asp:Content>
