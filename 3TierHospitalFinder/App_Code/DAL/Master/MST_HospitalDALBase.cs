@@ -13,6 +13,7 @@ namespace HospitalFinder.DAL
         #region Properties
 
         private string _Message;
+
         public string Message
         {
             get
@@ -41,6 +42,7 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@CategoryID", SqlDbType.Int, entMST_Hospital.CategoryID);
                 sqlDB.AddInParameter(dbCMD, "@CategoryTypeID", SqlDbType.Int, entMST_Hospital.CategoryTypeID);
                 sqlDB.AddInParameter(dbCMD, "@Address", SqlDbType.VarChar, entMST_Hospital.Address);
+                sqlDB.AddInParameter(dbCMD, "@PinCode", SqlDbType.VarChar, entMST_Hospital.PinCode);
                 sqlDB.AddInParameter(dbCMD, "@MobileNumber", SqlDbType.VarChar, entMST_Hospital.MobileNumber);
                 sqlDB.AddInParameter(dbCMD, "@TelePhoneNumber", SqlDbType.VarChar, entMST_Hospital.TelePhoneNumber);
                 sqlDB.AddInParameter(dbCMD, "@Fax", SqlDbType.VarChar, entMST_Hospital.Fax);
@@ -90,6 +92,7 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@CategoryTypeID", SqlDbType.Int, entMST_Hospital.CategoryTypeID);
                 sqlDB.AddInParameter(dbCMD, "@CategoryID", SqlDbType.Int, entMST_Hospital.CategoryID);
                 sqlDB.AddInParameter(dbCMD, "@Address", SqlDbType.VarChar, entMST_Hospital.Address);
+                sqlDB.AddInParameter(dbCMD, "@PinCode", SqlDbType.VarChar, entMST_Hospital.PinCode);
                 sqlDB.AddInParameter(dbCMD, "@MobileNumber", SqlDbType.VarChar, entMST_Hospital.MobileNumber);
                 sqlDB.AddInParameter(dbCMD, "@TelePhoneNumber", SqlDbType.VarChar, entMST_Hospital.TelePhoneNumber);
                 sqlDB.AddInParameter(dbCMD, "@Fax", SqlDbType.VarChar, entMST_Hospital.Fax);
@@ -191,6 +194,9 @@ namespace HospitalFinder.DAL
                         if (!dr["Address"].Equals(System.DBNull.Value))
                             entMST_Hospital.Address = Convert.ToString(dr["Address"]);
 
+                        if (!dr["PinCode"].Equals(System.DBNull.Value))
+                            entMST_Hospital.PinCode = Convert.ToString(dr["PinCode"]);
+
                         if (!dr["MobileNumber"].Equals(System.DBNull.Value))
                             entMST_Hospital.MobileNumber = Convert.ToString(dr["MobileNumber"]);
 
@@ -230,14 +236,13 @@ namespace HospitalFinder.DAL
                 return null;
             }
         }
+
         public DataTable SelectAll()
         {
             try
             {
                 SqlDatabase sqlDB = new SqlDatabase(myConnectionString);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("PR_MST_Hospital_SelectAll");
-
-               
 
                 DataTable dtMST_Hospital = new DataTable("PR_MST_Hospital_SelectAll");
 
@@ -263,6 +268,5 @@ namespace HospitalFinder.DAL
         }
 
         #endregion SelectOperation
-
     }
 }

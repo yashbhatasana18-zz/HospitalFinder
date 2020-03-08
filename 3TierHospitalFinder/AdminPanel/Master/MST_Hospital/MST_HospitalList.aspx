@@ -48,6 +48,9 @@
                             <th>
                                 <asp:Label ID="lbhCategoryType" runat="server" Text="Category Type"></asp:Label>
                             </th>
+                            <th>
+                                <asp:Label ID="lbhPinCode" runat="server" Text="PinCode"></asp:Label>
+                            </th>
                             <%--                            <th>
                                 <asp:Label ID="lbhEmailID" runat="server" Text="EmailID"></asp:Label>
                             </th>
@@ -93,6 +96,7 @@
                                     <td><%#Eval("StateName") %></td>
                                     <td><%#Eval("CategoryName") %></td>
                                     <td><%#Eval("CategoryType") %></td>
+                                    <td><%#Eval("PinCode") %></td>
                                     <%--                                    <td><%#Eval("EmailID") %></td>
                                     <td><%#Eval("MobileNumber") %></td>
                                     <td><%#Eval("TelephoneNumber") %></td>

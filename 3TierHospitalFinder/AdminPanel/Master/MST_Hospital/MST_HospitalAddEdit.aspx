@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-12 m-2">
                 <div class="form-group row">
-                    <label for="HospitalName" class="col-md-3 col-form-label">Hospital Name<span style="color:red;font-size:20px;">*</span> :</label>
+                    <label for="HospitalName" class="col-md-3 col-form-label">Hospital Name<span style="color: red; font-size: 20px;">*</span> :</label>
                     <div class="col-md-9">
                         <asp:TextBox runat="server" ID="txtHospitalName" CssClass="form-control"></asp:TextBox>
                         <small id="passwordHelpBlock" class="form-text text-muted ">
@@ -22,11 +22,24 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="HospitalAddress" class="col-md-3 col-form-label">Hospital Address<span style="color:red;font-size:20px;">*</span> :</label>
+                    <label for="HospitalAddress" class="col-md-3 col-form-label">Hospital Address<span style="color: red; font-size: 20px;">*</span> :</label>
                     <div class="col-md-9">
                         <asp:TextBox runat="server" ID="txtAddress" CssClass="form-control" TextMode="MultiLine" Rows="2"></asp:TextBox>
                         <small id="Small5" class="form-text text-muted ">
                             <asp:RequiredFieldValidator ID="rfvAdderss" runat="server" ErrorMessage="Enter Hospital Address" ControlToValidate="txtAddress" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="HospitalPinCode" class="col-md-3 col-form-label">Pin Code<span style="color: red; font-size: 20px;">*</span> :</label>
+
+                    <div class="col-md-9">
+                        <asp:TextBox runat="server" ID="txtPinCode" type="text" class="form-control" placeholder="Enter PinCode" MaxLength="6" />
+                        <small id="Small5" class="form-text text-muted ">
+                            <asp:RequiredFieldValidator ID="rfvPinCode" runat="server"
+                                ControlToValidate="txtPinCode" ErrorMessage="Enter PinCode" Display="Dynamic"
+                                SetFocusOnError="True" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
                         </small>
                     </div>
                 </div>
@@ -72,14 +85,14 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="Category" class="col-md-3 col-form-label">Select Category<span style="color:red;font-size:20px;">*</span> :</label>
+                    <label for="Category" class="col-md-3 col-form-label">Select Category<span style="color: red; font-size: 20px;">*</span> :</label>
                     <div class="col-md-3">
                         <asp:DropDownList ID="ddlCategory" CssClass="form-control" runat="server"></asp:DropDownList>
                         <small id="Small2" class="form-text text-muted">
                             <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ErrorMessage="Select Category" ControlToValidate="ddlCategory" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300" InitialValue="-99"></asp:RequiredFieldValidator>
                         </small>
                     </div>
-                    <label for="CategoryType" class="col-md-3 col-form-label">Select Category Type<span style="color:red;font-size:20px;">*</span> :</label>
+                    <label for="CategoryType" class="col-md-3 col-form-label">Select Category Type<span style="color: red; font-size: 20px;">*</span> :</label>
                     <div class="col-md-3">
                         <asp:DropDownList ID="ddlCategoryType" CssClass="form-control" runat="server"></asp:DropDownList>
                         <small id="Small3" class="form-text text-muted">
@@ -89,7 +102,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="City" class="col-md-3 col-form-label">Select City<span style="color:red;font-size:20px;">*</span> :</label>
+                    <label for="City" class="col-md-3 col-form-label">Select City<span style="color: red; font-size: 20px;">*</span> :</label>
                     <div class="col-md-9">
                         <asp:DropDownList ID="ddlCity" CssClass="form-control" runat="server"></asp:DropDownList>
                         <small id="Small1" class="form-text text-muted">
@@ -105,4 +118,3 @@
         </div>
     </div>
 </asp:Content>
-

@@ -16,7 +16,6 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
     {
         if (!Page.IsPostBack)
         {
-
             if (Session["UserID"] == null)
             {
                 Response.Redirect("~/Login/Login.aspx");
@@ -51,7 +50,6 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             }
 
             #endregion 11.4 Set Control Default Value
-
         }
     }
 
@@ -93,6 +91,9 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
         if (!entMST_Hospital.Address.IsNull)
             txtAddress.Text = entMST_Hospital.Address.Value.ToString();
 
+        if (!entMST_Hospital.PinCode.IsNull)
+            txtPinCode.Text = entMST_Hospital.PinCode.Value.ToString();
+
         if (!entMST_Hospital.MobileNumber.IsNull)
             txtMobileNumber.Text = entMST_Hospital.MobileNumber.Value.ToString();
 
@@ -113,12 +114,12 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
 
         if (!entMST_Hospital.EmergencyNumber.IsNull)
             txtEmergencyNumber.Text = entMST_Hospital.EmergencyNumber.Value.ToString();
-
     }
 
     #endregion 14.0 FillControls By PK
 
     #region 15.0 Save Button Event
+
     protected void btnAdd_Click(object sender, EventArgs e)
     {
         if (Request.QueryString["HospitalID"] == null)
@@ -144,6 +145,10 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             if (txtAddress.Text.ToString().Trim() != "")
             {
                 entMST_Hospital.Address = txtAddress.Text.ToString().Trim();
+            }
+            if (txtPinCode.Text.ToString().Trim() != "")
+            {
+                entMST_Hospital.PinCode = txtPinCode.Text.ToString().Trim();
             }
             if (txtMobileNumber.Text.ToString().Trim() != "")
             {
@@ -212,6 +217,10 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             {
                 entMST_Hospital.Address = txtAddress.Text.ToString().Trim();
             }
+            if (txtPinCode.Text.ToString().Trim() != "")
+            {
+                entMST_Hospital.PinCode = txtPinCode.Text.ToString().Trim();
+            }
             if (txtMobileNumber.Text.ToString().Trim() != "")
             {
                 entMST_Hospital.MobileNumber = txtMobileNumber.Text.ToString().Trim();
@@ -255,6 +264,7 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             }
         }
     }
+
     #endregion 15.0 Save Button Event
 
     #region 16.0 Clear Controls
@@ -278,5 +288,4 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
     }
 
     #endregion 16.0 Clear Controls
-
 }

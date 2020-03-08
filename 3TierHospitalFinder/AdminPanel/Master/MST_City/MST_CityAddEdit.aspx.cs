@@ -46,7 +46,6 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
             }
 
             #endregion 11.4 Set Control Default Value
-
         }
     }
 
@@ -74,20 +73,17 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
         if (!entMST_City.CityName.IsNull)
             txtCityName.Text = entMST_City.CityName.Value.ToString();
 
-        if (!entMST_City.PinCode.IsNull)
-            txtPinCode.Text = entMST_City.PinCode.Value.ToString();
-
         if (!entMST_City.STDCode.IsNull)
             txtSTDCode.Text = entMST_City.STDCode.Value.ToString();
 
         if (!entMST_City.StateID.IsNull)
             ddlState.SelectedValue = entMST_City.StateID.Value.ToString();
-
     }
 
     #endregion 14.0 FillControls By PK
 
     #region 15.0 Save Button Event
+
     protected void btnAdd_Click(object sender, EventArgs e)
     {
         if (Request.QueryString["CityID"] == null)
@@ -98,10 +94,10 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
             {
                 entMST_City.CityName = txtCityName.Text.ToString().Trim();
             }
-            if (txtPinCode.Text.ToString().Trim() != "")
-            {
-                entMST_City.PinCode = txtPinCode.Text.ToString().Trim();
-            }
+            //if (txtPinCode.Text.ToString().Trim() != "")
+            //{
+            //    entMST_City.PinCode = txtPinCode.Text.ToString().Trim();
+            //}
             if (txtSTDCode.Text.ToString().Trim() != "")
             {
                 entMST_City.STDCode = txtSTDCode.Text.ToString().Trim();
@@ -133,13 +129,13 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
             {
                 entMST_City.CityName = txtCityName.Text.ToString().Trim();
             }
-            if (txtPinCode.Text.ToString().Trim() != "")
-            {
-                entMST_City.PinCode = txtPinCode.Text.ToString().Trim();
-            }
+            //if (txtPinCode.Text.ToString().Trim() != "")
+            //{
+            //    entMST_City.PinCode = txtPinCode.Text.ToString().Trim();
+            //}
             if (txtSTDCode.Text.ToString().Trim() != "")
             {
-                entMST_City.STDCode  = txtSTDCode.Text.ToString().Trim();
+                entMST_City.STDCode = txtSTDCode.Text.ToString().Trim();
             }
             if (ddlState.SelectedIndex > 0)
             {
@@ -160,6 +156,7 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
             }
         }
     }
+
     #endregion 15.0 Save Button Event
 
     #region 16.0 Clear Controls
@@ -167,12 +164,11 @@ public partial class AdminPanel_Master_MST_City_MST_CityAddEdit : System.Web.UI.
     private void ClearControls()
     {
         txtCityName.Text = String.Empty;
-        txtPinCode.Text = String.Empty;
+        //txtPinCode.Text = String.Empty;
         txtSTDCode.Text = String.Empty;
         ddlState.SelectedIndex = 0;
         txtCityName.Focus();
     }
 
     #endregion 16.0 Clear Controls
-
 }

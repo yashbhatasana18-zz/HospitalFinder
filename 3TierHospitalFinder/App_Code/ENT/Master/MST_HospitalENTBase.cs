@@ -7,6 +7,7 @@ namespace HospitalFinder.ENT
         #region Properties
 
         protected SqlInt32 _HospitalID;
+
         public SqlInt32 HospitalID
         {
             get
@@ -20,6 +21,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _HospitalName;
+
         public SqlString HospitalName
         {
             get
@@ -33,6 +35,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlInt32 _CityID;
+
         public SqlInt32 CityID
         {
             get
@@ -46,6 +49,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlInt32 _CategoryID;
+
         public SqlInt32 CategoryID
         {
             get
@@ -59,6 +63,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlInt32 _CategoryTypeID;
+
         public SqlInt32 CategoryTypeID
         {
             get
@@ -72,6 +77,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _Address;
+
         public SqlString Address
         {
             get
@@ -84,7 +90,22 @@ namespace HospitalFinder.ENT
             }
         }
 
+        protected SqlString _PinCode;
+
+        public SqlString PinCode
+        {
+            get
+            {
+                return _PinCode;
+            }
+            set
+            {
+                _PinCode = value;
+            }
+        }
+
         protected SqlString _MobileNumber;
+
         public SqlString MobileNumber
         {
             get
@@ -98,6 +119,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _TelePhoneNumber;
+
         public SqlString TelePhoneNumber
         {
             get
@@ -111,6 +133,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _Fax;
+
         public SqlString Fax
         {
             get
@@ -124,6 +147,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _Website;
+
         public SqlString Website
         {
             get
@@ -137,6 +161,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _EmailID;
+
         public SqlString EmailID
         {
             get
@@ -150,6 +175,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _AmbulancePhoneNumber;
+
         public SqlString AmbulancePhoneNumber
         {
             get
@@ -163,6 +189,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _EmergencyNumber;
+
         public SqlString EmergencyNumber
         {
             get
@@ -176,6 +203,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlDateTime _CreationDate;
+
         public SqlDateTime CreationDate
         {
             get
@@ -189,6 +217,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlDateTime _ModificationDate;
+
         public SqlDateTime ModificationDate
         {
             get
@@ -202,6 +231,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlInt32 _UserID;
+
         public SqlInt32 UserID
         {
             get

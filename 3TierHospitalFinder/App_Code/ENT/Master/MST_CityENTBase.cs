@@ -11,6 +11,7 @@ namespace HospitalFinder.ENT
         #region Properties
 
         protected SqlInt32 _CityID;
+
         public SqlInt32 CityID
         {
             get
@@ -24,6 +25,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlInt32 _StateID;
+
         public SqlInt32 StateID
         {
             get
@@ -37,6 +39,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlString _CityName;
+
         public SqlString CityName
         {
             get
@@ -49,20 +52,8 @@ namespace HospitalFinder.ENT
             }
         }
 
-        protected SqlString _PinCode;
-        public SqlString PinCode
-        {
-            get
-            {
-                return _PinCode;
-            }
-            set
-            {
-                _PinCode = value;
-            }
-        }
-
         protected SqlString _STDCode;
+
         public SqlString STDCode
         {
             get
@@ -76,6 +67,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlDateTime _CreationDate;
+
         public SqlDateTime CreationDate
         {
             get
@@ -89,6 +81,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlDateTime _ModificationDate;
+
         public SqlDateTime ModificationDate
         {
             get
@@ -102,6 +95,7 @@ namespace HospitalFinder.ENT
         }
 
         protected SqlInt32 _UserID;
+
         public SqlInt32 UserID
         {
             get
