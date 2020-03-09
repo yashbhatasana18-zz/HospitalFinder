@@ -88,7 +88,7 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td class="text-center"><%#Eval("HospitalName") %></td>
-                                            <td class="text-center" width="400px"><%#Eval("Address") %></td>
+                                            <td class="text-center" style="width:400px;"><%#Eval("Address") %></td>
                                             <td class="text-center"><%#Eval("CityName") %></td>
                                             <td class="text-center"><%#Eval("StateName") %></td>
                                             <td class="text-center"><%#Eval("CategoryName") %></td>
