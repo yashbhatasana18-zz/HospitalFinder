@@ -1,120 +1,183 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default/MasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="MST_HospitalAddEdit.aspx.cs" Inherits="AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit" %>
+﻿<%@ Page Title="" EnableTheming="true" Theme="Admin" Language="C#" MasterPageFile="~/Default/MasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="MST_HospitalAddEdit.aspx.cs" Inherits="AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>
-                    <asp:Label ID="lblPageHeader" runat="server"></asp:Label>
-                </h1>
-                <asp:Label ID="lblMessage" runat="server" CssClass="badge badge-success"></asp:Label>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="cphPageHeader" runat="Server">
+    Hospital
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphBreadCrumb" runat="Server">
+    <li>
+        <i class="fa fa-home"></i>
+        <asp:HyperLink runat="server" NavigateUrl="~/AdminPanel/Default.aspx">Home</asp:HyperLink>
+        <i class="fa fa-angle-right"></i>
+    </li>
+    <li>
+        <a href="MST_HospitalList.aspx">Hospital</a>
+        <i class="fa fa-angle-right"></i>
+    </li>
+    <li>HospitalAddEdit
+    </li>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphContent" runat="Server">
+
+    <asp:Panel ID="pnlAlert" runat="server" Visible="false">
+        <div class="alert alert-success alert-dismissable ">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
+            <asp:Label ID="lblMessage" runat="server" EnableViewState="false"></asp:Label>
+        </div>
+    </asp:Panel>
+
+    <div style="padding-right: 25px; float: right;">
+        <asp:HyperLink ID="hlBack" runat="server" NavigateUrl="javascript:history.go(-1)">
+	        [ Back to page ]
+        </asp:HyperLink>
+    </div>
+
+    <div class="portlet light">
+        <div class="portlet-title">
+            <div class="caption">
+                <asp:Label SkinID="lblFormHeaderIcon" ID="lblFormHeaderIcon" runat="server"></asp:Label>
+                <span class="caption-subject font-green-sharp bold uppercase">
+                    <asp:Label runat="server" ID="lblPageHeader"></asp:Label>
+                </span>
             </div>
-            <div class="col-md-12 m-2">
-                <div class="form-group row">
-                    <label for="HospitalName" class="col-md-3 col-form-label">Hospital Name<span style="color: red; font-size: 20px;">*</span> :</label>
-                    <div class="col-md-9">
-                        <asp:TextBox runat="server" ID="txtHospitalName" CssClass="form-control"></asp:TextBox>
-                        <small id="passwordHelpBlock" class="form-text text-muted ">
-                            <asp:RequiredFieldValidator ID="rfvHospitalName" runat="server" ErrorMessage="Enter Hospital Name" ControlToValidate="txtHospitalName" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-                        </small>
+        </div>
+
+        <div class="portlet-body form">
+            <div class="form-horizontal" role="form">
+                <div class="form-body">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>Hospital Name</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtHospitalName" type="text" class="form-control" placeholder="Enter Hospital Name" />
+                            <asp:RequiredFieldValidator ID="rfvCityName" runat="server"
+                                ControlToValidate="txtHospitalName" ErrorMessage="Enter City Name" Display="Dynamic"
+                                SetFocusOnError="True" ValidationGroup="HospitalAddEdit" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="HospitalAddress" class="col-md-3 col-form-label">Hospital Address<span style="color: red; font-size: 20px;">*</span> :</label>
-                    <div class="col-md-9">
-                        <asp:TextBox runat="server" ID="txtAddress" CssClass="form-control" TextMode="MultiLine" Rows="2"></asp:TextBox>
-                        <small id="Small5" class="form-text text-muted ">
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>Hospital Address</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox ID="txtAddress" runat="server" class="form-control" placeholder="Enter Hospital Address"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvAdderss" runat="server" ErrorMessage="Enter Hospital Address" ControlToValidate="txtAddress" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-                        </small>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>Email Address</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtEmailAddress" CssClass="form-control"></asp:TextBox>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>Fax</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtFax" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <label class="col-md-3 control-label">
+                            <span>Website</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtWebsite" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span>Mobile Number</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtMobileNumber" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <label class="col-md-3 control-label">
+                            <span>AmbulancePhoneNumber</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtAmbulancePhoneNumber" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span>TelePhoneNumber</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtTelePhoneNumber" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <label class="col-md-3 control-label">
+                            <span>EmergencyNumber</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtEmergencyNumber" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>Select Category</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:DropDownList runat="server" ID="ddlCategory" CssClass="form-control select2me"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                ControlToValidate="ddlCategory" Display="Dynamic" InitialValue="-99"
+                                ErrorMessage="Select State Name" ValidationGroup="HospitalAddEdit" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>Select CategoryType</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:DropDownList runat="server" ID="ddlCategoryType" CssClass="form-control select2me"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                ControlToValidate="ddlCategoryType" Display="Dynamic" InitialValue="-99"
+                                ErrorMessage="Select Category Type" ValidationGroup="HospitalAddEdit" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span class="required">*</span>
+                            <span>Select City</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:DropDownList runat="server" ID="ddlCity" CssClass="form-control select2me"></asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="rfvCity" runat="server"
+                                ControlToValidate="ddlCity" Display="Dynamic" InitialValue="-99"
+                                ErrorMessage="Select City Name" ValidationGroup="HospitalAddEdit" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <asp:LinkButton ID="btnAdd" runat="server" SkinID="btnSave" ValidationGroup="HospitalAddEdit" OnClick="btnAdd_Click" />
+                                <asp:HyperLink ID="hlCancel" runat="server" SkinID="hlCancel" CausesValidation="false" NavigateUrl="~/AdminPanel/Master/MST_Hospital/MST_HospitalList.aspx" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-group row">
-                    <label for="HospitalPinCode" class="col-md-3 col-form-label">Pin Code<span style="color: red; font-size: 20px;">*</span> :</label>
-
-                    <div class="col-md-9">
-                        <asp:TextBox runat="server" ID="txtPinCode" type="text" class="form-control" placeholder="Enter PinCode" MaxLength="6" />
-                        <small id="Small5" class="form-text text-muted ">
-                            <asp:RequiredFieldValidator ID="rfvPinCode" runat="server"
-                                ControlToValidate="txtPinCode" ErrorMessage="Enter PinCode" Display="Dynamic"
-                                SetFocusOnError="True" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
-                        </small>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="EmailAddress" class="col-md-3 col-form-label">Email Address:</label>
-                    <div class="col-md-9">
-                        <asp:TextBox runat="server" ID="txtEmailAddress" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="Fax" class="col-md-3 col-form-label">Fax :</label>
-                    <div class="col-md-3">
-                        <asp:TextBox runat="server" ID="txtFax" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <label for="Website" class="col-md-3 col-form-label">Website :</label>
-                    <div class="col-md-3">
-                        <asp:TextBox runat="server" ID="txtWebsite" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="MobileNumber" class="col-md-3 col-form-label">Mobile Number :</label>
-                    <div class="col-md-3">
-                        <asp:TextBox runat="server" ID="txtMobileNumber" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <label for="AmbulancePhoneNumber" class="col-md-3 col-form-label">AmbulancePhoneNumber :</label>
-                    <div class="col-md-3">
-                        <asp:TextBox runat="server" ID="txtAmbulancePhoneNumber" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="TelePhoneNumber" class="col-md-3 col-form-label">TelePhoneNumber :</label>
-                    <div class="col-md-3">
-                        <asp:TextBox runat="server" ID="txtTelePhoneNumber" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <label for="EmergencyNumber" class="col-md-3 col-form-label">EmergencyNumber :</label>
-                    <div class="col-md-3">
-                        <asp:TextBox runat="server" ID="txtEmergencyNumber" CssClass="form-control"></asp:TextBox>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="Category" class="col-md-3 col-form-label">Select Category<span style="color: red; font-size: 20px;">*</span> :</label>
-                    <div class="col-md-3">
-                        <asp:DropDownList ID="ddlCategory" CssClass="form-control" runat="server"></asp:DropDownList>
-                        <small id="Small2" class="form-text text-muted">
-                            <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ErrorMessage="Select Category" ControlToValidate="ddlCategory" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300" InitialValue="-99"></asp:RequiredFieldValidator>
-                        </small>
-                    </div>
-                    <label for="CategoryType" class="col-md-3 col-form-label">Select Category Type<span style="color: red; font-size: 20px;">*</span> :</label>
-                    <div class="col-md-3">
-                        <asp:DropDownList ID="ddlCategoryType" CssClass="form-control" runat="server"></asp:DropDownList>
-                        <small id="Small3" class="form-text text-muted">
-                            <asp:RequiredFieldValidator ID="rfvCategoryType" runat="server" ErrorMessage="Select Category Type" ControlToValidate="ddlCategoryType" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300" InitialValue="-99"></asp:RequiredFieldValidator>
-                        </small>
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="City" class="col-md-3 col-form-label">Select City<span style="color: red; font-size: 20px;">*</span> :</label>
-                    <div class="col-md-9">
-                        <asp:DropDownList ID="ddlCity" CssClass="form-control" runat="server"></asp:DropDownList>
-                        <small id="Small1" class="form-text text-muted">
-                            <asp:RequiredFieldValidator ID="rfvCity" runat="server" ErrorMessage="Select City Name" ControlToValidate="ddlCity" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300" InitialValue="-99"></asp:RequiredFieldValidator>
-                        </small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 offset-10">
-                <asp:Button ID="btnAdd" runat="server" Text="Add" CssClass="btn btn-outline-success" ValidationGroup="HospitalAddEdit" OnClick="btnAdd_Click" />
-                <asp:HyperLink ID="hlCancel" runat="server" NavigateUrl="~/AdminPanel/Master/MST_Hospital/MST_HospitalList.aspx" Text="Cancel" CssClass="btn btn-outline-danger"></asp:HyperLink>
             </div>
         </div>
     </div>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="cphScripts" runat="Server">
 </asp:Content>

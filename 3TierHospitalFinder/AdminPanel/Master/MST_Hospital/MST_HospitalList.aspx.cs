@@ -6,8 +6,6 @@ using System.Web.UI.WebControls;
 
 public partial class AdminPanel_Master_MST_Hospital_MST_HospitalList : System.Web.UI.Page
 {
-    
-
     #region Page Load Event
     protected void Page_Load(object sender, EventArgs e)
     {

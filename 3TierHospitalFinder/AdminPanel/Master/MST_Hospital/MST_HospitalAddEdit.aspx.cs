@@ -91,9 +91,6 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
         if (!entMST_Hospital.Address.IsNull)
             txtAddress.Text = entMST_Hospital.Address.Value.ToString();
 
-        if (!entMST_Hospital.PinCode.IsNull)
-            txtPinCode.Text = entMST_Hospital.PinCode.Value.ToString();
-
         if (!entMST_Hospital.MobileNumber.IsNull)
             txtMobileNumber.Text = entMST_Hospital.MobileNumber.Value.ToString();
 
@@ -146,10 +143,7 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             {
                 entMST_Hospital.Address = txtAddress.Text.ToString().Trim();
             }
-            if (txtPinCode.Text.ToString().Trim() != "")
-            {
-                entMST_Hospital.PinCode = txtPinCode.Text.ToString().Trim();
-            }
+           
             if (txtMobileNumber.Text.ToString().Trim() != "")
             {
                 entMST_Hospital.MobileNumber = txtMobileNumber.Text.ToString().Trim();
@@ -189,9 +183,11 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
 
             if (balMST_Hospital.Insert(entMST_Hospital))
             {
+                pnlAlert.Visible = true;
                 lblMessage.Text = "Data Inserted Successfully.";
                 ClearControls();
             }
+           
         }
         else
         {
@@ -216,10 +212,6 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             if (txtAddress.Text.ToString().Trim() != "")
             {
                 entMST_Hospital.Address = txtAddress.Text.ToString().Trim();
-            }
-            if (txtPinCode.Text.ToString().Trim() != "")
-            {
-                entMST_Hospital.PinCode = txtPinCode.Text.ToString().Trim();
             }
             if (txtMobileNumber.Text.ToString().Trim() != "")
             {

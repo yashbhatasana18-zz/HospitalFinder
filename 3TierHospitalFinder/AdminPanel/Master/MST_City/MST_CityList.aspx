@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPageHeader" runat="Server">
-    City List <small>(<asp:Label ID="lblCount" runat="server" Text="Academic Year Count"></asp:Label>)</small>
+    City List <small>(<asp:Label ID="lblCount" runat="server" Text="City Count"></asp:Label>)</small>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBreadCrumb" runat="Server">
     <li>

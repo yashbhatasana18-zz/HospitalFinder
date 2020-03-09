@@ -42,7 +42,6 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@CategoryID", SqlDbType.Int, entMST_Hospital.CategoryID);
                 sqlDB.AddInParameter(dbCMD, "@CategoryTypeID", SqlDbType.Int, entMST_Hospital.CategoryTypeID);
                 sqlDB.AddInParameter(dbCMD, "@Address", SqlDbType.VarChar, entMST_Hospital.Address);
-                sqlDB.AddInParameter(dbCMD, "@PinCode", SqlDbType.VarChar, entMST_Hospital.PinCode);
                 sqlDB.AddInParameter(dbCMD, "@MobileNumber", SqlDbType.VarChar, entMST_Hospital.MobileNumber);
                 sqlDB.AddInParameter(dbCMD, "@TelePhoneNumber", SqlDbType.VarChar, entMST_Hospital.TelePhoneNumber);
                 sqlDB.AddInParameter(dbCMD, "@Fax", SqlDbType.VarChar, entMST_Hospital.Fax);
@@ -92,7 +91,6 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@CategoryTypeID", SqlDbType.Int, entMST_Hospital.CategoryTypeID);
                 sqlDB.AddInParameter(dbCMD, "@CategoryID", SqlDbType.Int, entMST_Hospital.CategoryID);
                 sqlDB.AddInParameter(dbCMD, "@Address", SqlDbType.VarChar, entMST_Hospital.Address);
-                sqlDB.AddInParameter(dbCMD, "@PinCode", SqlDbType.VarChar, entMST_Hospital.PinCode);
                 sqlDB.AddInParameter(dbCMD, "@MobileNumber", SqlDbType.VarChar, entMST_Hospital.MobileNumber);
                 sqlDB.AddInParameter(dbCMD, "@TelePhoneNumber", SqlDbType.VarChar, entMST_Hospital.TelePhoneNumber);
                 sqlDB.AddInParameter(dbCMD, "@Fax", SqlDbType.VarChar, entMST_Hospital.Fax);
@@ -193,9 +191,6 @@ namespace HospitalFinder.DAL
 
                         if (!dr["Address"].Equals(System.DBNull.Value))
                             entMST_Hospital.Address = Convert.ToString(dr["Address"]);
-
-                        if (!dr["PinCode"].Equals(System.DBNull.Value))
-                            entMST_Hospital.PinCode = Convert.ToString(dr["PinCode"]);
 
                         if (!dr["MobileNumber"].Equals(System.DBNull.Value))
                             entMST_Hospital.MobileNumber = Convert.ToString(dr["MobileNumber"]);
