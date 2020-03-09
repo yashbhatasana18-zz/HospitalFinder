@@ -49,17 +49,16 @@
                 <div class="form-body">
                     <div class="form-group">
                         <label class="col-md-3 control-label">
-                            <span class="required">*</span>
-                            <span>State Name</span>
+                            <span>State Name<span class="required">*</span></span>
                         </label>
                         <div class="col-md-3">
-                            <asp:TextBox runat="server" ID="txtStateName" CssClass="form-control"></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="rfvState" runat="server"
-                                ControlToValidate="txtStateName" Display="Dynamic"
-                                ErrorMessage="Enter State Name" ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:TextBox runat="server" ID="txtStateName" CssClass="form-control" type="text" placeholder="Enter State Name"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvState" runat="server" ControlToValidate="txtStateName"
+                                Display="Dynamic" ErrorMessage="Enter State Name" SetFocusOnError="True"
+                                ValidationGroup="master" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>
-                     <div class="form-actions">
+                    <div class="form-actions">
                         <div class="row">
                             <div class="col-md-offset-3 col-md-9">
                                 <asp:LinkButton ID="btnAdd" runat="server" SkinID="btnSave" ValidationGroup="master" OnClick="btnAdd_Click" />

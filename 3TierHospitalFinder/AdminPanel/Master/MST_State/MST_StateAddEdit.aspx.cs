@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Data;
-using System.Configuration;
-using System.Collections;
-using System.Web;
-using System.Web.Security;
 using System.Web.UI;
 using HospitalFinder.BAL;
 using HospitalFinder.ENT;
-using HospitalFinder;
-
 
 public partial class AdminPanel_Master_MST_State_MST_StateAddEdit : System.Web.UI.Page
 {
@@ -82,6 +75,7 @@ public partial class AdminPanel_Master_MST_State_MST_StateAddEdit : System.Web.U
             MST_StateBAL balMST_State = new MST_StateBAL();
             if (balMST_State.Insert(entMST_State))
             {
+                pnlAlert.Visible = true;
                 lblMessage.Text = "Data Inserted Successfully.";
                 ClearControls();
             }

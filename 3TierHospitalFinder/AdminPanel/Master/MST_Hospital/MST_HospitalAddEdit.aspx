@@ -63,13 +63,12 @@
 
                     <div class="form-group">
                         <label class="col-md-3 control-label">
-                            <span class="required">*</span>
-                            <span>Hospital Address</span>
+                            
+                            <span>Hospital Address<span class="required">*</span></span>
                         </label>
                         <div class="col-md-3">
                             <asp:TextBox ID="txtAddress" runat="server" class="form-control" placeholder="Enter Hospital Address"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvAdderss" runat="server" ErrorMessage="Enter Hospital Address" ControlToValidate="txtAddress" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
-
                         </div>
                     </div>
 
@@ -79,7 +78,7 @@
                             <span>Email Address</span>
                         </label>
                         <div class="col-md-3">
-                            <asp:TextBox runat="server" ID="txtEmailAddress" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtEmailAddress" CssClass="form-control" placeholder="Enter Email"></asp:TextBox>
 
                         </div>
                     </div>

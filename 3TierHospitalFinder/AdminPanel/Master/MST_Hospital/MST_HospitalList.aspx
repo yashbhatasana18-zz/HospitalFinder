@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphPageHeader" runat="Server">
-    Hospital List <small>(<asp:Label ID="lblCount" runat="server" Text="Hospital Count"></asp:Label>)</small>
+    Hospital
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBreadCrumb" runat="Server">
     <li>
@@ -29,7 +29,7 @@
             </asp:Panel>
 
             <div class="caption">
-                <b>Hospital List</b>&nbsp;
+                <b>Hospital List</b>&nbsp;<small>(<asp:Label ID="lblCount" runat="server" Text="Hospital Count"></asp:Label>)</small>
                 <asp:Label ID="lblSearchResultHeader" SkinID="lblSearchResultHeaderText" runat="server"></asp:Label>
                 <%--<label class="control-label pull-right">
                     <asp:Label ID="lblRecordInfoTop" Text="No entries found" CssClass="pull-right" runat="server"></asp:Label>
