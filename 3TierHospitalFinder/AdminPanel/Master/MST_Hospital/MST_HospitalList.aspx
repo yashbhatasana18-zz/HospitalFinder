@@ -46,7 +46,7 @@
 
         <div class="form-group ">
             <div class="col-md-2 pull-right">
-                <asp:TextBox runat="server" ID="lblSearch" CssClass="form-control" placeholder="------Search Hospital------" onkeyup="SearchFunction()"></asp:TextBox>
+                <asp:TextBox runat="server" ID="lblSearch" CssClass="form-control" placeholder="---Search Hospital---" onkeyup="SearchFunction()"></asp:TextBox>
             </div>
         </div>
 
@@ -76,6 +76,9 @@
                                         <asp:Label ID="Label8" runat="server" Text="Category Type"></asp:Label>
                                     </th>
                                     <th class="text-center">
+                                        <asp:Label ID="Label9" runat="server" Text="User Name"></asp:Label>
+                                    </th>
+                                    <th class="text-center">
                                         <asp:Label ID="lblAction" runat="server" Text="Action"></asp:Label>
                                     </th>
                                 </tr>
@@ -85,11 +88,12 @@
                                     <ItemTemplate>
                                         <tr>
                                             <td class="text-center"><%#Eval("HospitalName") %></td>
-                                            <td class="text-center"><%#Eval("Address") %></td>
+                                            <td class="text-center" width="400px"><%#Eval("Address") %></td>
                                             <td class="text-center"><%#Eval("CityName") %></td>
                                             <td class="text-center"><%#Eval("StateName") %></td>
                                             <td class="text-center"><%#Eval("CategoryName") %></td>
                                             <td class="text-center"><%#Eval("CategoryType") %></td>
+                                            <td class="text-center"><%#Eval("UserName") %></td>
                                             <td class="text-center">
                                                 <asp:HyperLink ID="hlEdit" runat="server" Text="Edit" SkinID="Edit" NavigateUrl='<%# "~/AdminPanel/Master/MST_Hospital/MST_HospitalAddEdit.aspx?HospitalID=" + Eval("HospitalID") %>'>
                                                 </asp:HyperLink>

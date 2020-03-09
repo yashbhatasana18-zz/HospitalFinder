@@ -46,7 +46,7 @@
 
         <div class="form-group ">
             <div class="col-md-3 pull-right">
-                <asp:TextBox runat="server" ID="txtSearch" CssClass="form-control" placeholder="-------Search Hospital Category Type-------" onkeyup="SearchFunction()"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtSearch" CssClass="form-control" placeholder="--Search Hospital Category Type--" onkeyup="SearchFunction()"></asp:TextBox>
             </div>
         </div>
 
@@ -61,13 +61,7 @@
                                         <asp:Label ID="lbhCategoryName" runat="server" Text="Category Type"></asp:Label>
                                     </th>
                                     <th class="text-center">
-                                        <asp:Label ID="lbhUserName" runat="server" Text="UserName"></asp:Label>
-                                    </th>
-                                    <th class="text-center">
-                                        <asp:Label ID="lbhCreationDate" runat="server" Text="Creation Date"></asp:Label>
-                                    </th>
-                                    <th class="text-center">
-                                        <asp:Label ID="lbhModificationDate" runat="server" Text="Modification Date"></asp:Label>
+                                        <asp:Label ID="lbhUserName" runat="server" Text="User Name"></asp:Label>
                                     </th>
                                     <th class="text-center">
                                         <asp:Label ID="lblAction" runat="server" Text="Action"></asp:Label>
@@ -80,8 +74,6 @@
                                         <tr>
                                             <td class="text-center"><%#Eval("CategoryType") %></td>
                                             <td class="text-center"><%#Eval("UserName") %></td>
-                                            <td class="text-center"><%#Eval("CreationDate","{0:dd-MM-yyyy}") %></td>
-                                            <td class="text-center"><%#Eval("ModificationDate","{0:dd-MM-yyyy}") %></td>
                                             <td class="tdaction text-nowrap text-center">
                                                 <asp:HyperLink ID="hlEdit" runat="server" Text="Edit" SkinID="Edit" NavigateUrl='<%# "~/AdminPanel/Master/MST_CategoryType/MST_CategoryTypeAddEdit.aspx?CategoryTypeID=" + Eval("CategoryTypeID") %>'>
                                                 </asp:HyperLink>

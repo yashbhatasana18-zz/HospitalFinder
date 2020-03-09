@@ -46,7 +46,7 @@
 
         <div class="form-group ">
             <div class="col-md-2 pull-right">
-                <asp:TextBox runat="server" ID="txtSearch" CssClass="form-control" placeholder="---------Search City---------" onkeyup="SearchFunction()"></asp:TextBox>
+                <asp:TextBox runat="server" ID="txtSearch" CssClass="form-control" placeholder="------Search City------" onkeyup="SearchFunction()"></asp:TextBox>
             </div>
         </div>
 
@@ -73,12 +73,6 @@
                                         <asp:Label ID="lbhUserName" runat="server" Text="UserName"></asp:Label>
                                     </th>
                                     <th class="text-center">
-                                        <asp:Label ID="lbhCreationDate" runat="server" Text="Creation Date"></asp:Label>
-                                    </th>
-                                    <th class="text-center">
-                                        <asp:Label ID="lbhModificationDate" runat="server" Text="Modification Date"></asp:Label>
-                                    </th>
-                                    <th class="text-center">
                                         <asp:Label ID="lblAction" runat="server" Text="Action"></asp:Label>
                                     </th>
                                 </tr>
@@ -92,8 +86,6 @@
                                             <%-- <td class="text-center"><%#Eval("PinCode") %></td>--%>
                                             <td class="text-center"><%#Eval("STDCode") %></td>
                                             <td class="text-center"><%#Eval("UserName") %></td>
-                                            <td class="text-center"><%#Eval("CreationDate","{0:dd-MM-yyyy}") %></td>
-                                            <td class="text-center"><%#Eval("ModificationDate","{0:dd-MM-yyyy}") %></td>
                                             <td class="tdaction text-nowrap text-center">
                                                 <asp:HyperLink ID="hlEdit" runat="server" Text="Edit" SkinID="Edit" NavigateUrl='<%# "~/AdminPanel/Master/MST_City/MST_CityAddEdit.aspx?CityID=" + Eval("CityID") %>'>
                                                 </asp:HyperLink>
