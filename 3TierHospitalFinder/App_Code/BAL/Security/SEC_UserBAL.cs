@@ -8,10 +8,10 @@ namespace HospitalFinder.BAL
 {
     public class SEC_UserBAL : SEC_UserBALBase
     {
-        public DataTable SelectDuplicate(SqlInt32 UserID, SqlString Email)
+        public DataTable SelectDuplicate(SqlString UserName, SqlString Email)
         {
             SEC_UserDAL dalSEC_User = new SEC_UserDAL();
-            return dalSEC_User.SelectDuplicate(UserID, Email);
+            return dalSEC_User.SelectDuplicate(UserName, Email);
         }
         public DataTable UserLogIn(SqlString UserName, SqlString Password)
         {

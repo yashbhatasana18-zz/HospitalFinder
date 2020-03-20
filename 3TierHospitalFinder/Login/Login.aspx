@@ -66,9 +66,9 @@
     <form id="Form1" class="login-form" runat="server" action="Login.aspx" name="StudentLogin">
         <asp:Panel ID="cpPanel" runat="server" DefaultButton="lbtnLogin" Style="margin-top: 50px;">
             <!-- BEGIN LOGIN -->
-            <div class="content" style="border-radius: 10px !important; background-color:#ffffff; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <div class="content" style="border-radius: 10px !important; background-color: #ffffff; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 <h1 class="text-center"><span class="text-danger">Hospital</span>Finder</h1>
-                
+
                 <!-- BEGIN LOGIN FORM -->
                 <div class="row">
                     <div class="col-md-12">
@@ -96,7 +96,7 @@
                             <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" Display="Dynamic" SetFocusOnError="true" ForeColor="Red" ErrorMessage="Enter Password" ValidationGroup="login"></asp:RequiredFieldValidator>
                         </div>
 
-<%--                        <div class="form-group">
+                        <%-- <div class="form-group">
                             <div class="input-icon">
                                 <i class="fa fa-user"></i>
                                 <asp:TextBox ID="txtEmailID" CssClass="form-control placeholder-no-fix" runat="server" placeholder="Enter Email Address"></asp:TextBox>
@@ -104,13 +104,21 @@
                             <asp:RequiredFieldValidator ID="rfvEmailID" runat="server" ControlToValidate="txtEmailID" Display="Dynamic" SetFocusOnError="true" ForeColor="Red" ErrorMessage="Enter Email Address" ValidationGroup="login"></asp:RequiredFieldValidator>
                         </div>--%>
 
-                        <div>
+                        <div class="col-md-12">
                             <asp:LinkButton ID="lbtnLogin" runat="server" CssClass="btn green-haze pull-right" ValidationGroup="login" OnClick="btnLogIn_Click">
                         Login <i class="m-icon-swapright m-icon-white"></i>
                             </asp:LinkButton>
                         </div>
 
-<%--                        <div class="forget-password text-center">
+                        <div class="forget-password text-center">
+                            <h4>No account,</h4>
+                            <p>
+                                No worries, click
+                        <asp:HyperLink ID="hlSignUP" runat="server" NavigateUrl="~/Login/Signup.aspx">here </asp:HyperLink>
+                                Signup
+                            </p>
+                        </div>
+                        <%--<div class="forget-password text-center">
                             <h4>Forgot your password ?</h4>
                             <p>
                                 No worries, click

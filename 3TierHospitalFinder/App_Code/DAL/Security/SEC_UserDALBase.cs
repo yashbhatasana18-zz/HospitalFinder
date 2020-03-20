@@ -45,7 +45,7 @@ namespace HospitalFinder.DAL
                 DataBaseHelper DBH = new DataBaseHelper();
                 DBH.ExecuteNonQuery(sqlDB, dbCMD);
 
-                entSEC_User.UserID = (SqlInt32)Convert.ToInt32(dbCMD.Parameters["@UserID"].Value);
+                //entSEC_User.UserID = (SqlInt32)Convert.ToInt32(dbCMD.Parameters["@UserID"].Value);
 
                 return true;
             }

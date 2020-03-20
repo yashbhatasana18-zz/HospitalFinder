@@ -10,14 +10,14 @@ namespace HospitalFinder.DAL
     public class SEC_UserDAL : SEC_UserDALBase
     {
         #region SelectDuplicate
-        public DataTable SelectDuplicate(SqlInt32 UserID, SqlString Email)
+        public DataTable SelectDuplicate(SqlString UserName, SqlString Email)
         {
             try
             {
                 SqlDatabase sqlDB = new SqlDatabase(myConnectionString);
                 DbCommand dbCMD = sqlDB.GetStoredProcCommand("PR_SEC_User_Verify");
 
-                sqlDB.AddInParameter(dbCMD, "@UserID", SqlDbType.Int, UserID);
+                sqlDB.AddInParameter(dbCMD, "@UserName", SqlDbType.VarChar, UserName);
                 sqlDB.AddInParameter(dbCMD, "@Email", SqlDbType.VarChar, Email);
 
                 DataTable dt = new DataTable("PR_SEC_User_Verify");
