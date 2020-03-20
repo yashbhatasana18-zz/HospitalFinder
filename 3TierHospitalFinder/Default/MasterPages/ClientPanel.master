@@ -9,17 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Find easily a doctor and book online an appointment">
     <meta name="author" content="Ansonika">
-    <title>FINDHOSPITAL - Find easily a hospital </title>
-    <%--<link href="<%=ResolveClientUrl("~/Default/assets/global/plugins/font-awesome/css/font-awesome.min.css") %>" rel="stylesheet" type="text/css" />--%>
+
+    <title>FIND HOSPITAL - Find easily a hospital</title>
 
     <link href="<%=ResolveClientUrl("~/Default/ClientAssets/css/blog.css") %>" rel="stylesheet" />
-    <!-- Favicons-->
-    <link rel="shortcut icon" href="<%=ResolveClientUrl("~/Default/ClientAssets/img/favicon.ico") %>" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="<%=ResolveClientUrl("~/Default/ClientAssets/img/apple-touch-icon-57x57-precomposed.png") %>">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="<%=ResolveClientUrl("~/Default/ClientAssets/img/apple-touch-icon-72x72-precomposed.png") %>">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="<%=ResolveClientUrl("~/Default/ClientAssets/img/apple-touch-icon-114x114-precomposed.png") %>">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="<%=ResolveClientUrl("~/Default/ClientAssets/img/apple-touch-icon-144x144-precomposed.png") %>">
-  
+
     <!-- BASE CSS -->
     <link href="<%=ResolveClientUrl("~/Default/ClientAssets/css/bootstrap.min.css") %>" rel="stylesheet">
     <link href="<%=ResolveClientUrl("~/Default/ClientAssets/css/style.css") %>" rel="stylesheet">
@@ -29,6 +23,7 @@
 
     <!-- YOUR CUSTOM CSS -->
     <link href="<%=ResolveClientUrl("~/Default/ClientAssets/css/custom.css") %>" rel="stylesheet">
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -49,7 +44,7 @@
                     <div class="row">
                         <div class="col-lg-3 col-6">
                             <div id="logo_home">
-                                <h1><a href="index.html" title="Findoctor">Findoctor</a></h1>
+                                <h1><a href="Default.aspx" title="HospitalFinder">HospitalFinder</a></h1>
                             </div>
                         </div>
                         <nav class="col-lg-9 col-6">
@@ -60,53 +55,15 @@
                             </ul>
                             <div class="main-menu">
                                 <ul>
-                                    <li class="submenu">
-                                        <a href="#0" class="show-submenu">Home<i class="icon-down-open-mini"></i></a>
-                                        <ul>
-                                            <li><a href="index.html">Home Default</a></li>
-                                            <li><a href="index-2.html">Home Version 2</a></li>
-                                            <li><a href="index-3.html">Home Version 3</a></li>
-                                            <li><a href="index-4.html">Home Version 4</a></li>
-                                            <li><a href="index-6.html">Revolution Slider</a></li>
-                                            <li><a href="index-5.html">With Cookie Bar (EU law)</a></li>
-                                        </ul>
+                                    <li>
+                                        <asp:HyperLink runat="server" ID="hlHome" NavigateUrl="~/ClientPanel/Default.aspx">Home</asp:HyperLink>
                                     </li>
-                                    <li class="submenu">
-                                        <a href="#0" class="show-submenu">Pages<i class="icon-down-open-mini"></i></a>
-                                        <ul>
-                                            <li><a href="list.html">List page</a></li>
-                                            <li><a href="grid-list.html">List grid page</a></li>
-                                            <li><a href="list-map.html">List map page</a></li>
-                                            <li><a href="detail-page.html">Detail page</a></li>
-                                            <li><a href="detail-page-2.html">Detail page 2</a></li>
-                                            <li><a href="detail-page-3.html">Detail page 3</a></li>
-                                            <li><a href="blog-1.html">Blog</a></li>
-                                            <li><a href="badges.html">Badges</a></li>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="login-2.html">Login 2</a></li>
-                                            <li><a href="register-doctor.html">Register Doctor</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="contacts.html">Contacts</a></li>
-                                        </ul>
+                                    <li>
+                                        <asp:HyperLink runat="server" ID="hlStateWiseHospital" NavigateUrl="~/ClientPanel/StateWiseHospital.aspx">StateWiseHospital</asp:HyperLink>
                                     </li>
-                                    <li class="submenu">
-                                        <a href="#0" class="show-submenu">Extra Elements<i class="icon-down-open-mini"></i></a>
-                                        <ul>
-                                            <li><a href="detail-page-working-booking.html">Detail working booking</a></li>
-                                            <li><a href="booking-page.html">Booking page</a></li>
-                                            <li><a href="confirm.html">Confirm page</a></li>
-                                            <li><a href="faq.html">Faq page</a></li>
-                                            <li><a href="coming_soon/index.html">Coming soon</a></li>
-                                            <li><a href="pricing-tables.html">Responsive pricing tables</a></li>
-                                            <li><a href="pricing-tables-2.html">Responsive pricing tables 2</a></li>
-                                            <li><a href="register-doctor-working.html">Working doctor register</a></li>
-                                            <li><a href="icon-pack-1.html">Icon pack 1</a></li>
-                                            <li><a href="icon-pack-2.html">Icon pack 2</a></li>
-                                            <li><a href="icon-pack-3.html">Icon pack 3</a></li>
-                                            <li><a href="404.html">404 page</a></li>
-                                        </ul>
+                                    <li>
+                                        <asp:HyperLink runat="server" ID="hlCityWiseHospital" NavigateUrl="~/ClientPanel/CityWiseHospital.aspx">CityWiseHospital</asp:HyperLink>
                                     </li>
-                                    <li><a href="#0">Buy this template</a></li>
                                 </ul>
                             </div>
                             <!-- /main-menu -->
@@ -117,51 +74,17 @@
             </header>
             <!-- /Header -->
 
-            <main>
-                <div class="hero_home version_1">
-                    <div class="content">
-                        <h3 class="fadeInUp animated">Find a Hospital!</h3>
-                        <p class="fadeInUp animated">
-                            Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
-                        </p>
-                        <form method="post" action="list.html" class="fadeInUp animated">
-                            <div id="custom-search-input">
-                                <div class="input-group">
-                                    <input type="text" class=" search-query" placeholder="Ex. Name, Specialization ....">
-                                    <input type="submit" class="btn_search" value="Search">
-                                </div>
-                                <ul>
-                                    <li>
-                                        <input type="radio" id="all" name="radio_search" value="all" checked="">
-                                        <label for="all">All</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="doctor" name="radio_search" value="doctor">
-                                        <label for="doctor">Hospital</label>
-                                    </li>
-                                    <li>
-                                        <input type="radio" id="clinic" name="radio_search" value="clinic">
-                                        <label for="clinic">Clinic</label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- /Hero -->
-
-            </main>
-
             <asp:ContentPlaceHolder ID="cphContent" runat="server">
             </asp:ContentPlaceHolder>
 
+            <!--footer-->
             <footer>
                 <div class="container margin_60_35">
                     <div class="row">
                         <div class="col-lg-3 col-md-12">
                             <p>
                                 <a href="index.html" title="Findoctor">
-                                    <img src="../Default/ClientAssets/img/logo.png" data-retina="true" alt="" width="163" height="36" class="img-fluid">
+                                    <img src="<%=ResolveClientUrl("~/Default/ClientAssets/img/logo.png") %>" data-retina="true" alt="" width="163" height="36" class="img-fluid">
                                 </a>
                             </p>
                         </div>
@@ -188,8 +111,7 @@
                         <div class="col-lg-3 col-md-4">
                             <h5>Contact with Us</h5>
                             <ul class="contacts">
-                                <li><a href="#"><i class="icon_mobile"></i>+ 61 23 8093 3400</a></li>
-                                <li><a href="#"><i class="icon_mail_alt"></i>help@hospitalfinder.com</a></li>
+                                <li><a href="mailto:HospitalFinder@gmail.com"><i class="icon_mail_alt"></i>HospitalFinder@gmail.com</a></li>
                             </ul>
                             <div class="follow_us">
                                 <h5>Follow us</h5>
@@ -212,24 +134,46 @@
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <div id="copy">© 2020 HospitalFinder</div>
+                            <div id="copy"><%=DateTime.Now.Year %> &copy; HospitalFinder</div>
                         </div>
                     </div>
                 </div>
             </footer>
             <!--/footer-->
-
             <div id="toTop"></div>
             <!-- Back to top button -->
-            <asp:ContentPlaceHolder ID="cphScript" runat="server">
-            </asp:ContentPlaceHolder>
         </div>
+        <!-- COMMON SCRIPTS -->
+        <script src="<%=ResolveClientUrl("~/Default/ClientAssets/js/jquery-2.2.4.min.js") %>"></script>
+        <script src="<%=ResolveClientUrl("~/Default/ClientAssets/js/common_scripts.min.js") %>"></script>
+        <script src="<%=ResolveClientUrl("~/Default/ClientAssets/js/functions.js") %>"></script>
+        <script type="text/javascript">
+            //setInterval("settime()", 1000);
 
+            function settime() {
+                var dateTime = new Date();
+                var hour = dateTime.getHours();
+                var minute = dateTime.getMinutes();
+                var second = dateTime.getSeconds();
+
+                if (minute < 10)
+                    minute = "0" + minute;
+
+                if (second < 10)
+                    second = "0" + second;
+
+                var ampm = hour >= 12 ? 'PM' : 'AM';
+                hour = hour % 12;
+                hour = hour ? hour : 12; // the hour '0' should be '12'
+                minute = minute < 10 ? minute : minute;
+
+                var time = "" + hour + ":" + minute + ":" + second + " " + ampm;
+
+                document.getElementById("clock").innerHTML = time;
+            }
+        </script>
     </form>
-    <!-- COMMON SCRIPTS -->
-    <script src="<%=ResolveClientUrl("~/Default/ClientAssets/js/jquery-2.2.4.min.js") %>"></script>
-    <script src="<%=ResolveClientUrl("~/Default/ClientAssets/js/common_scripts.min.js") %>"></script>
-    <script src="<%=ResolveClientUrl("~/Default/ClientAssets/js/functions.js") %>"></script>
-
+    <asp:ContentPlaceHolder ID="cphScript" runat="server">
+    </asp:ContentPlaceHolder>
 </body>
 </html>

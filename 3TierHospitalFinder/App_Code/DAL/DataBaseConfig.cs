@@ -6,7 +6,7 @@ namespace HospitalFinder.DAL
 {
     public class DataBaseConfig
     {
-        public string myConnectionString = ConfigurationManager.ConnectionStrings["HFConnectionString"].ConnectionString;
+        public static string myConnectionString = ConfigurationManager.ConnectionStrings["HFConnectionString"].ConnectionString;
 
         public string GetErrorMessage(int Error)
         {
