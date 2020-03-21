@@ -76,7 +76,7 @@
                                                 <h6>EmailID : <a runat="server" id="txtEmailID" href="mailto://"></a></h6>
                                             </li>
                                             <li>
-                                                <h6>Website : <a runat="server" id="txtWebsite" href="#"></a></h6>
+                                                <h6>Website : <a runat="server" id="txtWebsite" href="http://"></a></h6>
                                             </li>
                                             <li>
                                                 <h6>Fax : <a runat="server" id="txtFax" href="mailto://"></a></h6>

@@ -29,7 +29,6 @@ public partial class AdminPanel_Master_MST_City_MST_CityList : System.Web.UI.Pag
     #region Function - Delete City
     protected void rptCityList_ItemCommand(object source, RepeaterCommandEventArgs e)
     {
-        pnlAlert.Visible = true;
         if (e.CommandName == "DeleteRecord" && e.CommandArgument != null)
         {
             try

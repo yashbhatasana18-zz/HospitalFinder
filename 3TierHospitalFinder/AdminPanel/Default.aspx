@@ -18,7 +18,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="dashboard-stat blue-madison">
                             <div class="visual">
-                                <i class="fa fa-comments"></i>
+                                <i class="fa fa-plus"></i>
                             </div>
                             <div class="details">
                                 <div class="number">
@@ -33,7 +33,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="dashboard-stat red-intense">
                             <div class="visual">
-                                <i class="fa fa-bar-chart-o"></i>
+                                <i class="fa fa-university"></i>
                             </div>
                             <div class="details">
                                 <div class="number">
@@ -48,7 +48,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="dashboard-stat green-haze">
                             <div class="visual">
-                                <i class="fa fa-shopping-cart"></i>
+                                <i class="fa fa-building"></i>
                             </div>
                             <div class="details">
                                 <div class="number">
@@ -63,7 +63,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="dashboard-stat purple-plum">
                             <div class="visual">
-                                <i class="fa fa-globe"></i>
+                                <i class="icon-users"></i>
                             </div>
                             <div class="details">
                                 <div class="number">
