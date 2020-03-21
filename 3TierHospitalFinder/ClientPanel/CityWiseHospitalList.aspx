@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default/MasterPages/ClientPanel.master" AutoEventWireup="true" CodeFile="CityWiseHospital.aspx.cs" Inherits="ClientPanel_CityWiseHospital" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default/MasterPages/ClientPanel.master" AutoEventWireup="true" CodeFile="CityWiseHospitalList.aspx.cs" Inherits="ClientPanel_CityWiseHospitalList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -8,14 +8,14 @@
             <asp:Label ID="lblMsg" runat="server" CssClass="badge badge-danger m-3"></asp:Label>
         </div>
         <div class="main_title">
-            <h2>Find Hospital</h2>
+            <h2>City Wise Hospital</h2>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="list_home">
                     <div class="list_title">
                         <i class="icon_archive_alt"></i>
-                        <h3>Search by City</h3>
+                        <h3>Search Hospital</h3>
                     </div>
                 </div>
             </div>
@@ -25,8 +25,8 @@
                         <div class="list_home">
                             <ul>
                                 <li>
-                                    <asp:HyperLink runat="server" ID="hlCity" NavigateUrl='<%# "~/ClientPanel/CityWiseHospitalList/" + Eval("CityID") %>'>
-                                        <strong><%#Eval("SrNo")%></strong><%#Eval("CityName") + "(" + Eval("HospitalCount") + ")" %>
+                                    <asp:HyperLink runat="server" ID="hlCity" NavigateUrl='<%# "~/ClientPanel/HospitalDetails/" + Eval("HospitalID") %>'>
+                                        <strong><%#Eval("SrNo")%></strong><%#Eval("HospitalName") + "(" + Eval("CityName") + ")" %>
                                     </asp:HyperLink>
                                 </li>
                             </ul>

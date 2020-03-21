@@ -26,7 +26,7 @@
                             <ul>
                                 <li>
                                     <asp:HyperLink runat="server" ID="hlState" NavigateUrl='<%# "~/ClientPanel/StateWiseHospitalList/" + Eval("StateID") %>'>
-                                        <strong><%#Eval("StateID")%></strong><%#Eval("StateName") + "(" + Eval("HospitalCount") + ")" %>
+                                        <strong><%#Eval("SrNo")%></strong><%#Eval("StateName") + "(" + Eval("HospitalCount") + ")" %>
                                     </asp:HyperLink>
                                 </li>
                             </ul>
