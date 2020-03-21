@@ -39,6 +39,7 @@ public partial class AdminPanel_Master_MST_City_MST_CityList : System.Web.UI.Pag
             }
             catch (Exception ex)
             {
+                pnlAlert.Visible = true;
                 lblMsg.Text = ex.Message;
             }
             finally

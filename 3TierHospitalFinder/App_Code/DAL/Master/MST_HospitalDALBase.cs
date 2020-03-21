@@ -231,7 +231,6 @@ namespace HospitalFinder.DAL
                 return null;
             }
         }
-
         public DataTable SelectAll()
         {
             try

@@ -31,9 +31,6 @@
             <div class="caption">
                 <b>State List</b>&nbsp;<small>(<asp:Label ID="lblCount" runat="server" Text="State Count"></asp:Label>)</small>
                 <asp:Label ID="lblSearchResultHeader" SkinID="lblSearchResultHeaderText" runat="server"></asp:Label>
-                <%--<label class="control-label pull-right">
-                    <asp:Label ID="lblRecordInfoTop" Text="No entries found" CssClass="pull-right" runat="server"></asp:Label>
-                </label>--%>
             </div>
             <div class="actions">
                 <asp:HyperLink ID="hlAddState" runat="server" NavigateUrl="~/AdminPanel/Master/MST_State/MST_StateAddEdit.aspx"

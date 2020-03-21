@@ -76,20 +76,6 @@ public partial class ClientPanel_Default : System.Web.UI.Page
     }
     #endregion Button : Clear
 
-    //#region Button : SecondSearch
-    //protected void btnSecondSearch_Click(object sender, EventArgs e)
-    //{
-    //    if (ddlState.SelectedValue != "-1")
-    //    {
-    //        FillGridViewOnSecondButtonClick();
-    //    }
-    //    else
-    //    {
-    //        lblMsg.Text = "Select Any Drop Down";
-    //    }
-    //}
-    //#endregion Button : SecondSearch
-
     #region FillGridViewOnButtonClick
     private void FillGridViewOnButtonClick()
     {
@@ -149,65 +135,6 @@ public partial class ClientPanel_Default : System.Web.UI.Page
         }
     }
     #endregion FillGridViewOnButtonClick
-
-    //#region FillGridViewOnSecondButtonClick
-    //private void FillGridViewOnSecondButtonClick()
-    //{
-    //    using (SqlConnection objConn = new SqlConnection(DataBaseConfig.myConnectionString))
-    //    {
-    //        objConn.Open();
-    //        using (SqlCommand objCmd = objConn.CreateCommand())
-    //        {
-    //            try
-    //            {
-    //                #region Prepare Command
-    //                objCmd.CommandType = CommandType.StoredProcedure;
-    //                objCmd.CommandText = "PR_MST_Hospital_Search";
-    //                if (txtSecondSearch.Text != "")
-    //                {
-    //                    objCmd.Parameters.AddWithValue("@HospitalName", txtSecondSearch.Text.Trim());
-    //                }
-    //                if (ddlState.SelectedValue != "-1")
-    //                {
-    //                    objCmd.Parameters.AddWithValue("@StateID", Convert.ToInt32(ddlState.SelectedValue));
-    //                }
-    //                if (ddlCity.SelectedValue != "-1")
-    //                {
-    //                    objCmd.Parameters.AddWithValue("@CityID", Convert.ToInt32(ddlCity.SelectedValue));
-    //                }
-    //                if (ddlCategory.SelectedValue != "-1")
-    //                {
-    //                    objCmd.Parameters.AddWithValue("@CategoryID", Convert.ToInt32(ddlCategory.SelectedValue));
-    //                }
-    //                if (ddlCategoryType.SelectedValue != "-1")
-    //                {
-    //                    objCmd.Parameters.AddWithValue("@CategoryTypeID", Convert.ToInt32(ddlCategoryType.SelectedValue));
-    //                }
-
-    //                #endregion Prepare Command
-
-    //                SqlDataReader objSDR = objCmd.ExecuteReader();
-    //                DataTable dtState = new DataTable();
-    //                dtState.Load(objSDR);
-
-    //                gvHospitalListByStateName.DataSource = dtState;
-    //                gvHospitalListByStateName.DataBind();
-    //            }
-    //            catch (Exception ex)
-    //            {
-    //                lblMsg.Text += ex.Message.ToString();
-    //            }
-    //            finally
-    //            {
-    //                if (objConn.State == ConnectionState.Open)
-    //                {
-    //                    objConn.Close();
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
-    //#endregion FillGridViewOnSecondButtonClick
 
     #region FillStateDropDownList
     private void FillStateDropDownList()

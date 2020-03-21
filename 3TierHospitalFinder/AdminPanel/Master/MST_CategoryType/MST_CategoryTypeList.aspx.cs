@@ -42,6 +42,7 @@ public partial class AdminPanel_Master_MST_CategoryType_MST_CategoryTypeList : S
             }
             catch (Exception ex)
             {
+                pnlAlert.Visible = true;
                 lblMsg.Text = ex.Message;
             }
             finally

@@ -2,7 +2,8 @@
 
 namespace HospitalFinder.DAL
 {
-    public class MST_HospitalDAL : MST_HospitalDALBase
+    public class DashboardDAL : DashboardDALBase
     {
+
     }
 }

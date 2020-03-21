@@ -3,7 +3,7 @@ using System.Data;
 
 namespace HospitalFinder.BAL
 {
-    public class MST_HospitalBAL : MST_HospitalBALBase
+    public class DashboardBAL : DashboardBALBase
     {
     }
 }

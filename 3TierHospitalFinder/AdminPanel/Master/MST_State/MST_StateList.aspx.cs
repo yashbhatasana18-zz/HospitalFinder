@@ -39,6 +39,7 @@ public partial class AdminPanel_Master_MST_State_MST_StateList : System.Web.UI.P
             }
             catch (Exception ex)
             {
+                pnlAlert.Visible = true;
                 lblMsg.Text = ex.Message;
             }
             finally
