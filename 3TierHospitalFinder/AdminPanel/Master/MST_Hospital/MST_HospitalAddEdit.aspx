@@ -53,7 +53,7 @@
                             <span>Hospital Name  <span class="required">*</span>
                             </span>
                         </label>
-                        <div class="col-md-3">
+                        <div class="col-md-9">
                             <asp:TextBox runat="server" ID="txtHospitalName" type="text" class="form-control" placeholder="Enter Hospital Name" />
                             <asp:RequiredFieldValidator ID="rfvCityName" runat="server"
                                 ControlToValidate="txtHospitalName" ErrorMessage="Enter City Name" Display="Dynamic"
@@ -66,7 +66,7 @@
 
                             <span>Hospital Address<span class="required">*</span></span>
                         </label>
-                        <div class="col-md-3">
+                        <div class="col-md-9">
                             <asp:TextBox ID="txtAddress" runat="server" class="form-control" placeholder="Enter Hospital Address"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="rfvAdderss" runat="server" ErrorMessage="Enter Hospital Address" ControlToValidate="txtAddress" Display="Dynamic" ValidationGroup="HospitalAddEdit" ForeColor="#FF3300"></asp:RequiredFieldValidator>
                         </div>
@@ -77,7 +77,7 @@
                             <span>Email Address<span class="required">*</span>
                             </span>
                         </label>
-                        <div class="col-md-3">
+                        <div class="col-md-9">
                             <asp:TextBox runat="server" ID="txtEmailAddress" CssClass="form-control" placeholder="Enter Email"></asp:TextBox>
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtEmailAddress" ValidationExpression="\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic" SetFocusOnError="true" ForeColor="Red" ValidationGroup="HospitalAddEdit" ErrorMessage="Enter Email Properly Ex : abc@gmail.com"></asp:RegularExpressionValidator>
                             <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmailAddress" Display="Dynamic" SetFocusOnError="true" ForeColor="Red" ErrorMessage="Enter Email" ValidationGroup="HospitalAddEdit"></asp:RequiredFieldValidator>
