@@ -4,36 +4,94 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
     <main>
-        <div class="hero_home version_1">
-            <div class="content">
-                <h3 class="fadeInUp animated">Find a Hospital!</h3>
-                <p class="fadeInUp animated">
-                    Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
-                </p>
-                <div class="fadeInUp animated">
-                    <div id="custom-search-input">
-                        <div class="input-group">
-                            <input type="text" class=" search-query" placeholder="Ex. Name, Specialization ....">
-                            <input type="submit" class="btn_search" value="Search">
+        <asp:ScriptManager ID="sm" runat="server">
+        </asp:ScriptManager>
+        <asp:UpdatePanel ID="up" runat="server">
+            <ContentTemplate>
+                <div class="hero_home version_1">
+                    <div class="content">
+                        <h3>Find a Hospital!</h3>
+                        <asp:Label ID="lblMsg" runat="server" CssClass="badge badge-danger m-3"></asp:Label>
+                        <div id="custom-search-input">
+                            <div class="input-group">
+                                <asp:TextBox ID="txtsearch" runat="server" CssClass="search-query" placeholder="Search Hospital"></asp:TextBox>
+                                <asp:Button runat="server" ID="btnSearch" Text="Search" CssClass="btn_search" ValidationGroup="Search" OnClick="btnSearch_Click" />
+                            </div>
+                            <ul>
+                                <li class="col-md-5">
+                                    <asp:DropDownList ID="ddlState" CssClass="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlState_SelectedIndexChanged"></asp:DropDownList>
+                                </li>
+                                <li class="col-md-5">
+                                    <asp:DropDownList ID="ddlCity" CssClass="form-control" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="col-md-5">
+                                    <asp:DropDownList ID="ddlCategory" CssClass="form-control" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                </li>
+                                <li class="col-md-5">
+                                    <asp:DropDownList ID="ddlCategoryType" CssClass="form-control" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                </li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li>
-                                <input type="radio" id="all" name="radio_search" value="all" checked="">
-                                <label for="all">All</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="doctor" name="radio_search" value="doctor">
-                                <label for="doctor">Hospital</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="clinic" name="radio_search" value="clinic">
-                                <label for="clinic">Clinic</label>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
+                <asp:Panel ID="pnlSearch" runat="server" Visible="false">
+                    <div class="col-md-12 m-3">
+                        <div class="form-group row d-flex">
+                            <asp:Label ID="lblSearch" runat="server" Text="Search :" CssClass="col-md-1 font-weight-bold col-form-label p-2 ml-auto"></asp:Label>
+                            <asp:TextBox runat="server" ID="txtSearch1" CssClass="col-md-2 form-control" placeholder="---Enter Name---" onkeyup="SearchFunction()"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <div style="overflow-x: auto;">
+                            <table class="table table-hover" id="tbState">
+                                <thead style="background-color: #ffccff;">
+                                    <tr>
+                                        <th>
+                                            <asp:Label ID="lbhSrNo" runat="server" Text="SrNo"></asp:Label>
+                                        </th>
+                                        <th>
+                                            <asp:Label ID="lbhHospitalName" runat="server" Text="Hospital"></asp:Label>
+                                        </th>
+                                        <th>
+                                            <asp:Label ID="lbhCityNamee" runat="server" Text="City"></asp:Label>
+                                        </th>
+                                        <th>
+                                            <asp:Label ID="lblCategoryName" runat="server" Text="Category"></asp:Label>
+                                        </th>
+                                        <th>
+                                            <asp:Label ID="lblCategoryType" runat="server" Text="CategoryType"></asp:Label>
+                                        </th>
+                                        <th>
+                                            <asp:Label ID="lbhEdit" runat="server" Text="Details"></asp:Label>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:Repeater ID="rptHospitalList" runat="server">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td><%#Eval("SrNo") %></td>
+                                                <td><%#Eval("HospitalName") %></td>
+                                                <td><%#Eval("CityName") %></td>
+                                                <td><%#Eval("CategoryName") %></td>
+                                                <td><%#Eval("CategoryType") %></td>
+                                                <td>
+                                                    <asp:HyperLink ID="hlShow" runat="server" Text="Show Details" CssClass="btn btn-outline-warning ml-3" NavigateUrl='<%# "~/ClientPanel/HospitalDetails/" + Eval("HospitalID") %>'>
+                                                    </asp:HyperLink>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </asp:Panel>
+            </ContentTemplate>
+        </asp:UpdatePanel>
         <div class="container margin_120_95">
             <div class="main_title">
                 <h2>Find by specialization</h2>
@@ -135,5 +193,25 @@
     </main>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphScript" runat="Server">
+    <script type="text/javascript">
+        const SearchFunction = () => {
+            let myinput = document.getElementById('cphContent_txtSearch1').value.toUpperCase();
+            let mytable = document.getElementById('tbState');
+            let tr = mytable.getElementsByTagName('tr');
+
+            for (i = 0; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[1];
+                if (td) {
+                    let textvalue = td.textContent || td.innerHTML;
+                    if (textvalue.toUpperCase().indexOf(myinput) > -1) {
+                        tr[i].style.display = "";
+                    }
+                    else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </asp:Content>
 

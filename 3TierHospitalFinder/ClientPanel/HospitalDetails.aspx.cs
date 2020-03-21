@@ -68,18 +68,18 @@ public partial class ClientPanel_HospitalDetails : System.Web.UI.Page
                             {
                                 txtAmbulancePhoneNumber.InnerText = objSDR["AmbulancePhoneNumber"].ToString();
                             }
-                            //if (!objSDR["Website"].Equals(DBNull.Value))
-                            //{
-                            //    txtWebsite.InnerText = objSDR["Website"].ToString();
-                            //}
-                            //if (!objSDR["EmailID"].Equals(DBNull.Value))
-                            //{
-                            //    txtEmailID.InnerText = objSDR["EmailID"].ToString();
-                            //}
-                            //if (!objSDR["Fax"].Equals(DBNull.Value))
-                            //{
-                            //    txtFax.InnerText = objSDR["Fax"].ToString();
-                            //}
+                            if (!objSDR["Website"].Equals(DBNull.Value))
+                            {
+                                txtWebsite.InnerText = objSDR["Website"].ToString();
+                            }
+                            if (!objSDR["EmailID"].Equals(DBNull.Value))
+                            {
+                                txtEmailID.InnerText = objSDR["EmailID"].ToString();
+                            }
+                            if (!objSDR["Fax"].Equals(DBNull.Value))
+                            {
+                                txtFax.InnerText = objSDR["Fax"].ToString();
+                            }
                         }
                     }
                     #endregion ReadData and Set Controls

@@ -7,9 +7,9 @@
         <div id="breadcrumb">
             <div class="container">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li>Page active</li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/ClientPanel/Default.aspx">Home</asp:HyperLink></li>
+                    <li>HospitalDetails</li>
                 </ul>
             </div>
         </div>
@@ -23,8 +23,8 @@
                     <nav id="secondary_nav">
                         <div class="container">
                             <ul class="clearfix">
-                                <li><a href="#section_1" class="active">General info</a></li>
-                                <li><a href="#section_2">Reviews</a></li>
+                                <li><a>General info</a></li>
+                                <li></li>
                             </ul>
                         </div>
                     </nav>
@@ -61,49 +61,30 @@
                                                 <%--<a href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x0:0xa6a9af76b1e2d899!2sAssistance+%E2%80%93+H%C3%B4pitaux+De+Paris!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank"><strong>View on map</strong></a>--%>
                                             </li>
                                             <li>
-                                                <h6>Phone</h6>
-                                                <a runat="server" id="txtEmergencyNumber" href="tel://"></a>-
-                                                <a runat="server" id="txtMobileNumber" href="tel://"></a>- 
-                                                <a runat="server" id="txtTelephoneNumber" href="tel://"></a>-
-                                                <a runat="server" id="txtAmbulancePhoneNumber" href="tel://"></a>
+                                                <h6>EmergencyNumber : <a runat="server" id="txtEmergencyNumber" href="tel://"></a></h6>
+                                            </li>
+                                            <li>
+                                                <h6>AmbulancePhoneNumber : <a runat="server" id="txtAmbulancePhoneNumber" href="tel://"></a></h6>
+                                            </li>
+                                            <li>
+                                                <h6>MobileNumber : <a runat="server" id="txtMobileNumber" href="tel://"></a></h6>
+                                            </li>
+                                            <li>
+                                                <h6>TelephoneNumber : <a runat="server" id="txtTelephoneNumber" href="tel://"></a></h6>
+                                            </li>
+                                            <li>
+                                                <h6>EmailID : <a runat="server" id="txtEmailID" href="mailto://"></a></h6>
+                                            </li>
+                                            <li>
+                                                <h6>Website : <a runat="server" id="txtWebsite" href="mailto://"></a></h6>
+                                            </li>
+                                            <li>
+                                                <h6>Fax : <a runat="server" id="txtFax" href="mailto://"></a></h6>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
-                            <hr>
-
-                            <!-- /profile -->
-                            <div class="indent_title_in">
-                                <i class="pe-7s-user"></i>
-                                <h3>Professional statement</h3>
-                                <p>Mussum ipsum cacilds, vidis litro abertis.</p>
-                            </div>
-                            <div class="wrapper_indent">
-                                <p>Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Nullam mollis. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapi.</p>
-                                <h6>Specializations</h6>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <ul class="bullets">
-                                            <li>Abdominal Radiology</li>
-                                            <li>Addiction Psychiatry</li>
-                                            <li>Adolescent Medicine</li>
-                                            <li>Cardiothoracic Radiology </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <ul class="bullets">
-                                            <li>Abdominal Radiology</li>
-                                            <li>Addiction Psychiatry</li>
-                                            <li>Adolescent Medicine</li>
-                                            <li>Cardiothoracic Radiology </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- /row-->
-                            </div>
-                            <!-- /wrapper indent -->
                         </div>
                         <!-- /section_1 -->
                     </div>
