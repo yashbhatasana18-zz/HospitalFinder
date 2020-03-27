@@ -82,7 +82,7 @@ public partial class ClientPanel_HospitalDetails : System.Web.UI.Page
                             }
                             if (!objSDR["MapCode"].Equals(DBNull.Value))
                             {
-                               ifmap.src = objSDR["MapCode"].ToString();
+                               //ifmap.src = objSDR["MapCode"].ToString();
                             }
                         }
                     }

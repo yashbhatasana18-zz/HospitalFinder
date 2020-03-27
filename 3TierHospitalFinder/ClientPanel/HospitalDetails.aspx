@@ -56,7 +56,7 @@
                                         </ul>
                                         <ul class="contacts">
                                             <li>
-                                                <iframe src="" id="ifmap"></iframe>
+                                                <%--<iframe src="" id="ifmap"></iframe>--%>
                                             </li>
                                             <li>
                                                 <h6>Address</h6>
