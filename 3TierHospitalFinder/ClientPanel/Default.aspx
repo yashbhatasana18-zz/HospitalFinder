@@ -38,51 +38,30 @@
                 </div>
                 <br />
 
-
-
                 <asp:Panel ID="pnlSearch" runat="server" Visible="false">
-                    <%--<div class="container">
+                    <div class="container">
                         <div class="form-group row">
                             <asp:Label ID="Label1" runat="server" Text="Search :" CssClass="col-md-1 font-weight-bold col-form-label p-2 ml-auto"></asp:Label>
                             <asp:TextBox runat="server" ID="TextBox1" CssClass="col-md-2 form-control" placeholder="---Enter Name---" onkeyup="SearchFunction()"></asp:TextBox>
                         </div>
-                        <div class="row">--%>
+                        <div class="row">
                     
                             <asp:Repeater ID="rptHospitalList" runat="server">
                                 <ItemTemplate>
-                                    <div class="card card-primary col-md-3">
-                                        <div class="col-md-12">
-                                            <asp:Image runat="server" ID="Image1" ImageUrl='<%#Eval("HospitalImage") %>' alt="Lights" CssClass="img img-responsive"/> 
-                                            <div class=""><%#Eval("HospitalName") %></div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="col-md-4">
-                                                <h3><%#Eval("CityName") %></h3>
-                                                  </div>
-                                            <div class="col-md-4">
-                                                <h3><%#Eval("CategoryName") %></h3>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <h3><%#Eval("CategoryType") %></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <%--<div class="col-lg-4 col-md-6">
+                                    <div class="col-md-4">
                                         <a href="<%# "/ClientPanel/HospitalDetails/" + Eval("HospitalID") %>" class="box_cat_home">
-                                            <img src="img/icon_cat_1.svg" width="60" height="60" alt="">
+                                            <asp:Image runat="server" ID="Image1" ImageUrl='<%#Eval("HospitalImage") %>' alt="Lights" width="100%" height="100%"/> 
                                             <h3><%#Eval("HospitalName") %></h3>
                                             <ul class="clearfix">
                                                 <li><strong><%#Eval("CityName") %></strong></li>
                                                 <li><strong><%#Eval("CategoryName") %></strong></li>
                                             </ul>
                                         </a>
-                                    </div>--%>
+                                    </div>
                                 </ItemTemplate>
                             </asp:Repeater>
-                        
-                     <%--   </div>
-                    </div>--%>
+                        </div>
+                    </div>
                 </asp:Panel>
             </ContentTemplate>
         </asp:UpdatePanel>
