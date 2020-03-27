@@ -164,6 +164,28 @@
                                 ControlToValidate="ddlCity" Display="Dynamic" InitialValue="-99"
                                 ErrorMessage="Select City Name" ValidationGroup="HospitalAddEdit" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
+
+                        <label class="col-md-3 control-label">
+                            <span>GoogleMap Link<span class="required">*</span>
+                            </span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:TextBox runat="server" ID="txtMapCode" type="text" class="form-control" placeholder="Enter Google Map Code" />
+                            <asp:RequiredFieldValidator ID="rfvMapCode" runat="server"
+                                ControlToValidate="txtMapCode" ErrorMessage="Enter Google Map Code" Display="Dynamic"
+                                SetFocusOnError="True" ValidationGroup="HospitalAddEdit" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">
+                            <span>Image Upload</span>
+                        </label>
+                        <div class="col-md-3">
+                            <asp:FileUpload ID="fuHospitalImage" runat="server" />
+                            <asp:Label ID="lblImagePath" runat="server" Visible="False"></asp:Label>
+                            <asp:Image ID="imgHospitalImage" runat="server" Visible="false" Height="100px" Width="100px" />
+                        </div>
                     </div>
 
                     <div class="form-actions">

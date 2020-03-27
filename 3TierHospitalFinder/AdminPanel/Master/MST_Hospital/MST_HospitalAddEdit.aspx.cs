@@ -111,6 +111,15 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
 
         if (!entMST_Hospital.EmergencyNumber.IsNull)
             txtEmergencyNumber.Text = entMST_Hospital.EmergencyNumber.Value.ToString();
+
+        if (!entMST_Hospital.HospitalImage.IsNull)
+        {
+            imgHospitalImage.ImageUrl = entMST_Hospital.HospitalImage.Value.ToString();
+            imgHospitalImage.Visible = true;
+        }
+
+        if (!entMST_Hospital.MapCode.IsNull)
+            txtMapCode.Text = entMST_Hospital.MapCode.Value.ToString();
     }
 
     #endregion 14.0 FillControls By PK
@@ -143,7 +152,6 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             {
                 entMST_Hospital.Address = txtAddress.Text.ToString().Trim();
             }
-           
             if (txtMobileNumber.Text.ToString().Trim() != "")
             {
                 entMST_Hospital.MobileNumber = txtMobileNumber.Text.ToString().Trim();
@@ -173,6 +181,34 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
                 entMST_Hospital.EmergencyNumber = txtEmergencyNumber.Text.ToString().Trim();
             }
 
+            string strImagePath = "~/HospitalImage/";
+            if (fuHospitalImage.HasFile)
+            {
+                entMST_Hospital.HospitalImage = strImagePath + fuHospitalImage.FileName;
+            }
+            else
+            {
+                entMST_Hospital.HospitalImage = imgHospitalImage.ImageUrl;
+            }
+
+            #region Upload Image
+            if (fuHospitalImage.HasFile)
+            {
+                if (CommonFunctions.IsValidPhoto(fuHospitalImage, fuHospitalImage.FileName) == String.Empty)
+                {
+                    if (!CommonFunctions.UploadDocument(fuHospitalImage, Server.MapPath(strImagePath), Server.MapPath(strImagePath + fuHospitalImage.FileName), Server.MapPath(strImagePath + fuHospitalImage.FileName)))
+                    {
+                        lblMessage.Text = "Kindly Select a Image to Upload";
+                    }
+                }
+                else
+                {
+                    lblMessage.Text = CommonFunctions.IsValidPhoto(fuHospitalImage, fuHospitalImage.FileName);
+                    return;
+                }
+            }
+            #endregion Upload Image
+
             entMST_Hospital.CreationDate = DateTime.Now;
 
             entMST_Hospital.ModificationDate = DateTime.Now;
@@ -187,7 +223,7 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
                 lblMessage.Text = "Data Inserted Successfully.";
                 ClearControls();
             }
-           
+
         }
         else
         {
@@ -241,6 +277,42 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             {
                 entMST_Hospital.EmergencyNumber = txtEmergencyNumber.Text.ToString().Trim();
             }
+            if (txtMapCode.Text.ToString().Trim() != "")
+            {
+                entMST_Hospital.MapCode = txtMapCode.Text.ToString().Trim();
+            }
+            if (fuHospitalImage.FileName.ToString().Trim() != "")
+            {
+                imgHospitalImage.Visible = true;
+                entMST_Hospital.HospitalImage = fuHospitalImage.FileName.ToString().Trim();
+            }          
+
+            string strImagePath = "~/HospitalImage/";
+            if (fuHospitalImage.HasFile)
+            {
+                entMST_Hospital.HospitalImage = strImagePath + fuHospitalImage.FileName;
+            }
+            else
+            {
+                entMST_Hospital.HospitalImage = imgHospitalImage.ImageUrl;
+            }
+            #region Upload Image
+            if (fuHospitalImage.HasFile)
+            {
+                if (CommonFunctions.IsValidPhoto(fuHospitalImage, fuHospitalImage.FileName) == String.Empty)
+                {
+                    if (!CommonFunctions.UploadDocument(fuHospitalImage, Server.MapPath(strImagePath), Server.MapPath(strImagePath + fuHospitalImage.FileName), Server.MapPath(strImagePath + fuHospitalImage.FileName)))
+                    {
+                        lblMessage.Text = "Kindly Select a Image to Upload";
+                    }
+                }
+                else
+                {
+                    lblMessage.Text = CommonFunctions.IsValidPhoto(fuHospitalImage, fuHospitalImage.FileName);
+                    return;
+                }
+            }
+            #endregion Upload Image
 
             entMST_Hospital.HospitalID = Convert.ToInt32(Request.QueryString["HospitalID"]);
 

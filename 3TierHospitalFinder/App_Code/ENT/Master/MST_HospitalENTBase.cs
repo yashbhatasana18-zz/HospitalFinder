@@ -202,6 +202,34 @@ namespace HospitalFinder.ENT
             }
         }
 
+        protected SqlString _HospitalImage;
+
+        public SqlString HospitalImage
+        {
+            get
+            {
+                return _HospitalImage;
+            }
+            set
+            {
+                _HospitalImage = value;
+            }
+        }
+
+        protected SqlString _MapCode;
+
+        public SqlString MapCode
+        {
+            get
+            {
+                return _MapCode;
+            }
+            set
+            {
+                _MapCode = value;
+            }
+        }
+
         protected SqlDateTime _CreationDate;
 
         public SqlDateTime CreationDate

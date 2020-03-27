@@ -49,6 +49,8 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@EmailID", SqlDbType.VarChar, entMST_Hospital.EmailID);
                 sqlDB.AddInParameter(dbCMD, "@AmbulancePhoneNumber", SqlDbType.VarChar, entMST_Hospital.AmbulancePhoneNumber);
                 sqlDB.AddInParameter(dbCMD, "@EmergencyNumber", SqlDbType.VarChar, entMST_Hospital.EmergencyNumber);
+                sqlDB.AddInParameter(dbCMD, "@HospitalImage", SqlDbType.VarChar, entMST_Hospital.HospitalImage);
+                sqlDB.AddInParameter(dbCMD, "@MapCode", SqlDbType.VarChar, entMST_Hospital.MapCode);
                 sqlDB.AddInParameter(dbCMD, "@CreationDate", SqlDbType.DateTime, entMST_Hospital.CreationDate);
                 sqlDB.AddInParameter(dbCMD, "@ModificationDate", SqlDbType.DateTime, entMST_Hospital.ModificationDate);
                 sqlDB.AddInParameter(dbCMD, "@UserID", SqlDbType.Int, entMST_Hospital.UserID);
@@ -98,6 +100,8 @@ namespace HospitalFinder.DAL
                 sqlDB.AddInParameter(dbCMD, "@EmailID", SqlDbType.VarChar, entMST_Hospital.EmailID);
                 sqlDB.AddInParameter(dbCMD, "@AmbulancePhoneNumber", SqlDbType.VarChar, entMST_Hospital.AmbulancePhoneNumber);
                 sqlDB.AddInParameter(dbCMD, "@EmergencyNumber", SqlDbType.VarChar, entMST_Hospital.EmergencyNumber);
+                sqlDB.AddInParameter(dbCMD, "@HospitalImage", SqlDbType.VarChar, entMST_Hospital.HospitalImage);
+                sqlDB.AddInParameter(dbCMD, "@MapCode", SqlDbType.VarChar, entMST_Hospital.MapCode);
                 sqlDB.AddInParameter(dbCMD, "@ModificationDate", SqlDbType.DateTime, entMST_Hospital.ModificationDate);
 
                 DataBaseHelper DBH = new DataBaseHelper();
@@ -212,6 +216,12 @@ namespace HospitalFinder.DAL
 
                         if (!dr["EmergencyNumber"].Equals(System.DBNull.Value))
                             entMST_Hospital.EmergencyNumber = Convert.ToString(dr["EmergencyNumber"]);
+
+                        if (!dr["HospitalImage"].Equals(System.DBNull.Value))
+                            entMST_Hospital.HospitalImage = Convert.ToString(dr["HospitalImage"]);
+
+                        if (!dr["MapCode"].Equals(System.DBNull.Value))
+                            entMST_Hospital.MapCode = Convert.ToString(dr["MapCode"]);
                     }
                 }
                 return entMST_Hospital;

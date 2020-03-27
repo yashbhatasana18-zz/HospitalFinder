@@ -36,59 +36,53 @@
                         </div>
                     </div>
                 </div>
-                <asp:Panel ID="pnlSearch" runat="server" Visible="false">
-                    <div class="col-md-12 m-3">
-                        <div class="form-group row d-flex">
-                            <asp:Label ID="lblSearch" runat="server" Text="Search :" CssClass="col-md-1 font-weight-bold col-form-label p-2 ml-auto"></asp:Label>
-                            <asp:TextBox runat="server" ID="txtSearch1" CssClass="col-md-2 form-control" placeholder="---Enter Name---" onkeyup="SearchFunction()"></asp:TextBox>
-                        </div>
-                    </div>
+                <br />
 
-                    <div class="col-md-12 mt-3">
-                        <div style="overflow-x: auto;">
-                            <table class="table table-hover" id="tbState">
-                                <thead style="background-color: #ffccff;">
-                                    <tr>
-                                        <th>
-                                            <asp:Label ID="lbhSrNo" runat="server" Text="SrNo"></asp:Label>
-                                        </th>
-                                        <th>
-                                            <asp:Label ID="lbhHospitalName" runat="server" Text="Hospital"></asp:Label>
-                                        </th>
-                                        <th>
-                                            <asp:Label ID="lbhCityNamee" runat="server" Text="City"></asp:Label>
-                                        </th>
-                                        <th>
-                                            <asp:Label ID="lblCategoryName" runat="server" Text="Category"></asp:Label>
-                                        </th>
-                                        <th>
-                                            <asp:Label ID="lblCategoryType" runat="server" Text="CategoryType"></asp:Label>
-                                        </th>
-                                        <th>
-                                            <asp:Label ID="lbhEdit" runat="server" Text="Details"></asp:Label>
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <asp:Repeater ID="rptHospitalList" runat="server">
-                                        <ItemTemplate>
-                                            <tr>
-                                                <td><%#Eval("SrNo") %></td>
-                                                <td><%#Eval("HospitalName") %></td>
-                                                <td><%#Eval("CityName") %></td>
-                                                <td><%#Eval("CategoryName") %></td>
-                                                <td><%#Eval("CategoryType") %></td>
-                                                <td>
-                                                    <asp:HyperLink ID="hlShow" runat="server" Text="Show Details" CssClass="btn btn-outline-warning ml-3" NavigateUrl='<%# "~/ClientPanel/HospitalDetails/" + Eval("HospitalID") %>'>
-                                                    </asp:HyperLink>
-                                                </td>
-                                            </tr>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                </tbody>
-                            </table>
+
+
+                <asp:Panel ID="pnlSearch" runat="server" Visible="false">
+                    <%--<div class="container">
+                        <div class="form-group row">
+                            <asp:Label ID="Label1" runat="server" Text="Search :" CssClass="col-md-1 font-weight-bold col-form-label p-2 ml-auto"></asp:Label>
+                            <asp:TextBox runat="server" ID="TextBox1" CssClass="col-md-2 form-control" placeholder="---Enter Name---" onkeyup="SearchFunction()"></asp:TextBox>
                         </div>
-                    </div>
+                        <div class="row">--%>
+                    
+                            <asp:Repeater ID="rptHospitalList" runat="server">
+                                <ItemTemplate>
+                                    <div class="card card-primary col-md-3">
+                                        <div class="col-md-12">
+                                            <asp:Image runat="server" ID="Image1" ImageUrl='<%#Eval("HospitalImage") %>' alt="Lights" CssClass="img img-responsive"/> 
+                                            <div class=""><%#Eval("HospitalName") %></div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-4">
+                                                <h3><%#Eval("CityName") %></h3>
+                                                  </div>
+                                            <div class="col-md-4">
+                                                <h3><%#Eval("CategoryName") %></h3>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <h3><%#Eval("CategoryType") %></h3>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <%--<div class="col-lg-4 col-md-6">
+                                        <a href="<%# "/ClientPanel/HospitalDetails/" + Eval("HospitalID") %>" class="box_cat_home">
+                                            <img src="img/icon_cat_1.svg" width="60" height="60" alt="">
+                                            <h3><%#Eval("HospitalName") %></h3>
+                                            <ul class="clearfix">
+                                                <li><strong><%#Eval("CityName") %></strong></li>
+                                                <li><strong><%#Eval("CategoryName") %></strong></li>
+                                            </ul>
+                                        </a>
+                                    </div>--%>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        
+                     <%--   </div>
+                    </div>--%>
                 </asp:Panel>
             </ContentTemplate>
         </asp:UpdatePanel>
@@ -196,7 +190,7 @@
     <script type="text/javascript">
         const SearchFunction = () => {
             let myinput = document.getElementById('cphContent_txtSearch1').value.toUpperCase();
-            let mytable = document.getElementById('tbState');
+            let mytable = document.getElementById('rptHospitalList');
             let tr = mytable.getElementsByTagName('tr');
 
             for (i = 0; i < tr.length; i++) {

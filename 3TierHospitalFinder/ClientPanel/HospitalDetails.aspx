@@ -6,7 +6,7 @@
     <main>
         <div id="breadcrumb">
             <div class="container">
-                <ul>
+                <ul style="text-align:right">
                     <li>
                         <asp:HyperLink runat="server" NavigateUrl="~/ClientPanel/Default.aspx">Home</asp:HyperLink></li>
                     <li>HospitalDetails</li>
@@ -56,6 +56,9 @@
                                         </ul>
                                         <ul class="contacts">
                                             <li>
+                                                <iframe src="" id="ifmap"></iframe>
+                                            </li>
+                                            <li>
                                                 <h6>Address</h6>
                                                 <span id="txtAddress" runat="server"></span>
                                                 <%--<a href="https://www.google.com/maps/dir//Assistance+%E2%80%93+H%C3%B4pitaux+De+Paris,+3+Avenue+Victoria,+75004+Paris,+Francia/@48.8606548,2.3348734,14z/data=!4m15!1m6!3m5!1s0x0:0xa6a9af76b1e2d899!2sAssistance+%E2%80%93+H%C3%B4pitaux+De+Paris!8m2!3d48.8568376!4d2.3504305!4m7!1m0!1m5!1m1!1s0x47e67031f8c20147:0xa6a9af76b1e2d899!2m2!1d2.3504327!2d48.8568361" target="_blank"><strong>View on map</strong></a>--%>
@@ -76,7 +79,7 @@
                                                 <h6>EmailID : <a runat="server" id="txtEmailID" href="mailto://"></a></h6>
                                             </li>
                                             <li>
-                                                <h6>Website : <a runat="server" id="txtWebsite" href="http://"></a></h6>
+                                                <h6>Website : <a runat="server" id="txtWebsite" href="http://" target="_blank"></a></h6>
                                             </li>
                                             <li>
                                                 <h6>Fax : <a runat="server" id="txtFax" href="mailto://"></a></h6>
@@ -84,6 +87,11 @@
                                         </ul>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-10"></div>
+                                <div class="col-sm-2">
+                                    <asp:HyperLink ID="hlhome" runat="server" Text="Back to Home" CssClass=" btn btn-primary" NavigateUrl="~/ClientPanel/Default.aspx"></asp:HyperLink></div>
                             </div>
                         </div>
                         <!-- /section_1 -->
