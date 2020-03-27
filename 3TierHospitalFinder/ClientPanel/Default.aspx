@@ -45,16 +45,20 @@
                             <asp:TextBox runat="server" ID="TextBox1" CssClass="col-md-2 form-control" placeholder="---Enter Name---" onkeyup="SearchFunction()"></asp:TextBox>
                         </div>
                         <div class="row">
-                    
+
                             <asp:Repeater ID="rptHospitalList" runat="server">
                                 <ItemTemplate>
                                     <div class="col-md-4">
                                         <a href="<%# "/ClientPanel/HospitalDetails/" + Eval("HospitalID") %>" class="box_cat_home">
-                                            <asp:Image runat="server" ID="Image1" ImageUrl='<%#Eval("HospitalImage") %>' alt="Lights" width="100%" height="100%"/> 
-                                            <h3><%#Eval("HospitalName") %></h3>
+                                            <asp:Image runat="server" ID="Image1" ImageUrl='<%#Eval("HospitalImage") %>' alt="Lights" Width="100%" Height="100%" />
+                                            <h3><strong><%#Eval("HospitalName") %></strong></h3>
+                                            <h6><%#Eval("Address") %></h6>
                                             <ul class="clearfix">
-                                                <li><strong><%#Eval("CityName") %></strong></li>
-                                                <li><strong><%#Eval("CategoryName") %></strong></li>
+                                                <li>City : <strong><%#Eval("CityName") %></strong></li>
+                                                <li>CategoryName : <strong><%#Eval("CategoryName") %></strong></li>
+                                            </ul>
+                                            <ul class="clearfix">
+                                                EmergencyNo : <strong><%#Eval("EmergencyNumber") %></strong>
                                             </ul>
                                         </a>
                                     </div>
