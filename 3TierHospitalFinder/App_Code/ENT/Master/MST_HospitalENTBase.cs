@@ -216,17 +216,17 @@ namespace HospitalFinder.ENT
             }
         }
 
-        protected SqlString _MapCode;
+        protected SqlString _LocationCoordinates;
 
-        public SqlString MapCode
+        public SqlString LocationCoordinates
         {
             get
             {
-                return _MapCode;
+                return _LocationCoordinates;
             }
             set
             {
-                _MapCode = value;
+                _LocationCoordinates = value;
             }
         }
 

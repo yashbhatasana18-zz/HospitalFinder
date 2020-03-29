@@ -32,9 +32,9 @@
                         <div class="box_general_3">
                             <div class="profile">
                                 <div class="row">
-                                    <div class="col-lg-5 col-md-4">
+                                    <div class="col-lg-12">
                                         <figure>
-                                            <img src="http://via.placeholder.com/565x565.jpg" alt="" class="img-fluid">
+                                            <asp:Image ID="imgHospitalImage" runat="server" alt="" style="width:100%; height=50%" />
                                         </figure>
                                     </div>
                                     <div class="col-lg-7 col-md-8">
@@ -79,7 +79,7 @@
                                                 <h6>EmailID : <a runat="server" id="txtEmailID" href="mailto://"></a></h6>
                                             </li>
                                             <li>
-                                                <h6>Website : <a runat="server" id="txtWebsite" href="http://" target="_blank"></a></h6>
+                                                <h6>Website : <a runat="server" id="txtWebsite" target="_blank"></a></h6>
                                             </li>
                                             <li>
                                                 <h6>Fax : <a runat="server" id="txtFax" href="mailto://"></a></h6>

@@ -118,8 +118,8 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             imgHospitalImage.Visible = true;
         }
 
-        if (!entMST_Hospital.MapCode.IsNull)
-            txtMapCode.Text = entMST_Hospital.MapCode.Value.ToString();
+        if (!entMST_Hospital.LocationCoordinates.IsNull)
+            txtLocationCoordinates.Text = entMST_Hospital.LocationCoordinates.Value.ToString();
     }
 
     #endregion 14.0 FillControls By PK
@@ -180,7 +180,10 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             {
                 entMST_Hospital.EmergencyNumber = txtEmergencyNumber.Text.ToString().Trim();
             }
-
+            if (txtLocationCoordinates.Text.ToString().Trim() != "")
+            {
+                entMST_Hospital.LocationCoordinates = txtLocationCoordinates.Text.ToString().Trim();
+            }
             string strImagePath = "~/HospitalImage/";
             if (fuHospitalImage.HasFile)
             {
@@ -277,9 +280,9 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
             {
                 entMST_Hospital.EmergencyNumber = txtEmergencyNumber.Text.ToString().Trim();
             }
-            if (txtMapCode.Text.ToString().Trim() != "")
+            if (txtLocationCoordinates.Text.ToString().Trim() != "")
             {
-                entMST_Hospital.MapCode = txtMapCode.Text.ToString().Trim();
+                entMST_Hospital.LocationCoordinates = txtLocationCoordinates.Text.ToString().Trim();
             }
             if (fuHospitalImage.FileName.ToString().Trim() != "")
             {
@@ -347,7 +350,7 @@ public partial class AdminPanel_Master_MST_Hospital_MST_HospitalAddEdit : System
         txtEmailAddress.Text = String.Empty;
         txtAmbulancePhoneNumber.Text = String.Empty;
         txtEmergencyNumber.Text = String.Empty;
-
+        txtLocationCoordinates.Text = String.Empty;
         txtHospitalName.Focus();
     }
 

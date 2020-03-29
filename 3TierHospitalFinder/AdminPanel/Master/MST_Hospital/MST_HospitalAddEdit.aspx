@@ -166,13 +166,13 @@
                         </div>
 
                         <label class="col-md-3 control-label">
-                            <span>GoogleMap Link<span class="required">*</span>
+                            <span>Location Coordinates<span class="required">*</span>
                             </span>
                         </label>
                         <div class="col-md-3">
-                            <asp:TextBox runat="server" ID="txtMapCode" type="text" class="form-control" placeholder="Enter Google Map Code" />
-                            <asp:RequiredFieldValidator ID="rfvMapCode" runat="server"
-                                ControlToValidate="txtMapCode" ErrorMessage="Enter Google Map Code" Display="Dynamic"
+                            <asp:TextBox runat="server" ID="txtLocationCoordinates" type="text" class="form-control" placeholder="Enter Location Coordinates" />
+                            <asp:RequiredFieldValidator ID="rfvLocationCoordinates" runat="server"
+                                ControlToValidate="txtLocationCoordinates" ErrorMessage="Enter Location Coordinates" Display="Dynamic"
                                 SetFocusOnError="True" ValidationGroup="HospitalAddEdit" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>

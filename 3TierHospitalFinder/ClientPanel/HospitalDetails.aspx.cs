@@ -80,10 +80,14 @@ public partial class ClientPanel_HospitalDetails : System.Web.UI.Page
                             {
                                 txtFax.InnerText = objSDR["Fax"].ToString();
                             }
-                            if (!objSDR["MapCode"].Equals(DBNull.Value))
+                            if (!objSDR["HospitalImage"].Equals(DBNull.Value))
                             {
-                               //ifmap.src = objSDR["MapCode"].ToString();
+                                imgHospitalImage.ImageUrl = objSDR["HospitalImage"].ToString();
                             }
+                            //if (!objSDR["MapCode"].Equals(DBNull.Value))
+                            //{
+                            //   //ifmap.src = objSDR["MapCode"].ToString();
+                            //}
                         }
                     }
                     #endregion ReadData and Set Controls
