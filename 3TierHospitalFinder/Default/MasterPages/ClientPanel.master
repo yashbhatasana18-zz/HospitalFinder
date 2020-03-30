@@ -11,7 +11,7 @@
     <meta name="author" content="Ansonika">
 
     <title>FIND HOSPITAL - Find easily a hospital</title>
-
+    <script src="https://apis.mapmyindia.com/advancedmaps/v1/d5qkng8u3gclpqgi4yr2k87idelchd4u/map_load?v=1.3"></script>
     <link href="<%=ResolveClientUrl("~/Default/ClientAssets/css/blog.css") %>" rel="stylesheet" />
 
     <!-- BASE CSS -->
