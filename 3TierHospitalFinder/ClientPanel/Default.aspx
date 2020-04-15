@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default/MasterPages/ClientPanel.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="ClientPanel_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
+   </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="Server">
     <main>
         <asp:ScriptManager ID="sm" runat="server">
@@ -19,18 +19,18 @@
                             </div>
                             <ul>
                                 <li class="col-md-5">
-                                    <asp:DropDownList ID="ddlState" CssClass="form-control" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlState_SelectedIndexChanged"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlState" CssClass="form-control select2me" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlState_SelectedIndexChanged"></asp:DropDownList>
                                 </li>
                                 <li class="col-md-5">
-                                    <asp:DropDownList ID="ddlCity" CssClass="form-control" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlCity" CssClass="form-control select2me" runat="server" AutoPostBack="true"></asp:DropDownList>
                                 </li>
                             </ul>
                             <ul>
                                 <li class="col-md-5">
-                                    <asp:DropDownList ID="ddlCategory" CssClass="form-control" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlCategory" CssClass="form-control select2me" runat="server" AutoPostBack="true"></asp:DropDownList>
                                 </li>
                                 <li class="col-md-5">
-                                    <asp:DropDownList ID="ddlCategoryType" CssClass="form-control" runat="server" AutoPostBack="true"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlCategoryType" CssClass="form-control select2me" runat="server" AutoPostBack="true"></asp:DropDownList>
                                 </li>
                             </ul>
                         </div>
@@ -170,6 +170,8 @@
     </main>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphScript" runat="Server">
+
+    
     <script type="text/javascript">
         const SearchFunction = () => {
             let myinput = document.getElementById('cphContent_txtSearch1').value.toUpperCase();

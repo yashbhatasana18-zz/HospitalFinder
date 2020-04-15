@@ -13,6 +13,8 @@
     <title>FIND HOSPITAL - Find easily a hospital</title>
     <script src="https://apis.mapmyindia.com/advancedmaps/v1/d5qkng8u3gclpqgi4yr2k87idelchd4u/map_load?v=1.3"></script>
     <link href="<%=ResolveClientUrl("~/Default/ClientAssets/css/blog.css") %>" rel="stylesheet" />
+    <%--select2me--%>
+    <link href="<%=ResolveClientUrl("~/Default/assets/global/plugins/select2/select2.css") %>" type="text/css" rel="stylesheet" />
 
     <!-- BASE CSS -->
     <link href="<%=ResolveClientUrl("~/Default/ClientAssets/css/bootstrap.min.css") %>" rel="stylesheet">
