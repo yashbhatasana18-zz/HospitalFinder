@@ -299,7 +299,7 @@
         <!-- END CONTAINER -->
 
         <!-- BEGIN FOOTER -->
-        <div class="page-footer">
+        <div  style="text-align:center;background:white">
             <div class="page-footer-inner">
                 <b><%=DateTime.Now.Year %> &copy; Developed By - DE Team | <a href="mailto:HospitalFinder@gmail.com">HospitalFinder@gmail.com</a> | Darshan Institute Of Engineering And Technology</b>
             </div>

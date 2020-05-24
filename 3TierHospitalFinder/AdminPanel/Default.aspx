@@ -8,7 +8,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="cphBreadCrumb" runat="Server">
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="cphContent" runat="Server">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <br />
